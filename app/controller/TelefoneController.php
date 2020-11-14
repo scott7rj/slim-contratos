@@ -14,7 +14,7 @@ final class TelefoneController extends AppController {
     }
     public function selectTelefonePorIdEmpresa(Request $request, Response $response, array $args): Response {
         try {
-            $data = $request->getParsedBody();
+            $data = $request->getQueryParams();
             $idEmpresa = $data['idEmpresa'];
             $telefoneDAO = new TelefoneDAO();
             $result = $telefoneDAO->selectTelefonePorIdEmpresa($idEmpresa);

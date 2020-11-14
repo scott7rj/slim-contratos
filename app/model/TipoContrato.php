@@ -6,8 +6,6 @@ final class TipoContrato extends AppModel {
     private $idTipoContrato;
     private $tipoContrato;
     private $ativo;
-    private $ultimaAlteracao;
-    private $usuarioAlteracao;
 
     public function __construct() {
         parent::__construct();
@@ -69,46 +67,6 @@ final class TipoContrato extends AppModel {
     public function setAtivo($ativo)
     {
         $this->ativo = $ativo;
-
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getUltimaAlteracao()
-    {
-        return $this->ultimaAlteracao;
-    }
-
-    /**
-     * @param mixed $ultimaAlteracao
-     *
-     * @return self
-     */
-    public function setUltimaAlteracao($ultimaAlteracao)
-    {
-        $this->ultimaAlteracao = $ultimaAlteracao;
-
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getUsuarioAlteracao()
-    {
-        return $this->usuarioAlteracao;
-    }
-
-    /**
-     * @param mixed $usuarioAlteracao
-     *
-     * @return self
-     */
-    public function setUsuarioAlteracao($usuarioAlteracao)
-    {
-        $this->usuarioAlteracao = $usuarioAlteracao;
 
         return $this;
     }

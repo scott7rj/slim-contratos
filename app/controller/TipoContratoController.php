@@ -14,8 +14,11 @@ final class TipoContratoController extends AppController {
     }
     public function selectTipoContrato(Request $request, Response $response, array $args): Response {
         try {
+            $data = $request->getQueryParams();
             $tipoContratoDAO = new TipoContratoDAO();
-            $result = $tipoContratoDAO->selectTipoContrato();
+            $model = new TipoContrato();
+            $model->setAtivo($data['ativo']);
+            $result = $tipoContratoDAO->selectTipoContrato($model);
             $response = $response->withJson($result);
             return $response;
         } catch (Exception $e) {

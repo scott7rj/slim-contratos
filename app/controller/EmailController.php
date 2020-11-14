@@ -14,7 +14,7 @@ final class EmailController extends AppController {
     }
     public function selectEmailPorIdEmpresa(Request $request, Response $response, array $args): Response {
         try {
-            $data = $request->getParsedBody();
+            $data = $request->getQueryParams();
             $idEmpresa = $data['idEmpresa'];
             $emailDAO = new EmailDAO();
             $result = $emailDAO->selectEmailPorIdEmpresa($idEmpresa);

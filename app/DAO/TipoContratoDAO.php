@@ -6,10 +6,10 @@ class TipoContratoDAO extends Conexao {
     public function __construct() {
         parent::__construct();
     }
-    public function selectTipoContrato() {
+    public function selectTipoContrato(TipoContrato $model) {
         try {
             $stmt = $this->pdo->prepare("SELECT * FROM [contratos].[fn_tipo_contrato_selecionar](:ativo)");
-            $ativo = 1;
+            $ativo = $model->getAtivo();
             $stmt->bindParam('ativo', $ativo);
             $stmt->execute();
             $result = $stmt->fetchAll(\PDO::FETCH_ASSOC);

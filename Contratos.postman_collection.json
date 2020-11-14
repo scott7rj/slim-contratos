@@ -1,0 +1,1227 @@
+{
+	"info": {
+		"_postman_id": "0d60d9c7-f972-482e-8a82-d206ab949222",
+		"name": "Contratos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "TipoContato",
+			"item": [
+				{
+					"name": "selectTipoContato",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://SP7688ET040:8088/slim/tipoContato",
+							"protocol": "http",
+							"host": [
+								"SP7688ET040"
+							],
+							"port": "8088",
+							"path": [
+								"slim",
+								"tipoContato"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "insertTipoContato",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tipoContato\":\"TI\",\r\n    \"usuarioAlteracao\":\"c110611\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://SP7688ET040:8088/slim/tipoContato",
+							"protocol": "http",
+							"host": [
+								"SP7688ET040"
+							],
+							"port": "8088",
+							"path": [
+								"slim",
+								"tipoContato"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateTipoContato",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idTipoContato\":\"9\",\r\n    \"tipoContato\":\"DIRETORIA\",\r\n    \"ativo\":\"1\",\r\n    \"usuarioAlteracao\":\"c999999\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://SP7688ET040:8088/slim/tipoContato",
+							"protocol": "http",
+							"host": [
+								"SP7688ET040"
+							],
+							"port": "8088",
+							"path": [
+								"slim",
+								"tipoContato"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteTipoContato",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idTipoContato\":\"59\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://SP7688ET040:8088/slim/tipoContato",
+							"protocol": "http",
+							"host": [
+								"SP7688ET040"
+							],
+							"port": "8088",
+							"path": [
+								"slim",
+								"tipoContato"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "autenticar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"matricula\": \"c110611\",\r\n    \"password\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://SP7688ET040:8088/slim/login",
+							"protocol": "http",
+							"host": [
+								"SP7688ET040"
+							],
+							"port": "8088",
+							"path": [
+								"slim",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "TipoContrato",
+			"item": [
+				{
+					"name": "selectTipoContrato",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://SP7688ET040:8088/slim/tipoContrato?ativo=1",
+							"protocol": "http",
+							"host": [
+								"SP7688ET040"
+							],
+							"port": "8088",
+							"path": [
+								"slim",
+								"tipoContrato"
+							],
+							"query": [
+								{
+									"key": "ativo",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "insertTipoContrato",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tipoContrato\":\"TI\",\r\n    \"usuarioAlteracao\":\"c110611\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://SP7688ET040:8088/slim/tipoContrato",
+							"protocol": "http",
+							"host": [
+								"SP7688ET040"
+							],
+							"port": "8088",
+							"path": [
+								"slim",
+								"tipoContrato"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateTipoContrato",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idTipoContrato\":\"9\",\r\n    \"tipoContrato\":\"DIRETORIA\",\r\n    \"ativo\":\"1\",\r\n    \"usuarioAlteracao\":\"c999999\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://SP7688ET040:8088/slim/tipoContrato",
+							"protocol": "http",
+							"host": [
+								"SP7688ET040"
+							],
+							"port": "8088",
+							"path": [
+								"slim",
+								"tipoContrato"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteTipoContrato",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idTipoContrato\":\"52\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://SP7688ET040:8088/slim/tipoContrato",
+							"protocol": "http",
+							"host": [
+								"SP7688ET040"
+							],
+							"port": "8088",
+							"path": [
+								"slim",
+								"tipoContrato"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Telefone",
+			"item": [
+				{
+					"name": "selectTelefonePorIdEmpresa",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://SP7688ET040:8088/slim/telefonePorIdEmpresa?idEmpresa=32",
+							"protocol": "http",
+							"host": [
+								"SP7688ET040"
+							],
+							"port": "8088",
+							"path": [
+								"slim",
+								"telefonePorIdEmpresa"
+							],
+							"query": [
+								{
+									"key": "idEmpresa",
+									"value": "32"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "insertTelefone",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idEmpresa\":\"2\",\r\n    \"idTipoContato\": \"8\",\r\n    \"telefone\": \"11911111111\",\r\n    \"usuarioAlteracao\":\"c110611\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://SP7688ET040:8088/slim/telefone",
+							"protocol": "http",
+							"host": [
+								"SP7688ET040"
+							],
+							"port": "8088",
+							"path": [
+								"slim",
+								"telefone"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateTelefone",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idTelefone\": \"4\",\r\n    \"idEmpresa\": \"2\",\r\n    \"idTipoContato\": \"8\",\r\n    \"telefone\": \"11922222222\",\r\n    \"usuarioAlteracao\":\"c110611\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://SP7688ET040:8088/slim/telefone",
+							"protocol": "http",
+							"host": [
+								"SP7688ET040"
+							],
+							"port": "8088",
+							"path": [
+								"slim",
+								"telefone"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteTelefone",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idTelefone\": \"4\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://SP7688ET040:8088/slim/telefone",
+							"protocol": "http",
+							"host": [
+								"SP7688ET040"
+							],
+							"port": "8088",
+							"path": [
+								"slim",
+								"telefone"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Email",
+			"item": [
+				{
+					"name": "selectEmailPorIdEmpresa",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://SP7688ET040:8088/slim/emailPorIdEmpresa?idEmpresa=32",
+							"protocol": "http",
+							"host": [
+								"SP7688ET040"
+							],
+							"port": "8088",
+							"path": [
+								"slim",
+								"emailPorIdEmpresa"
+							],
+							"query": [
+								{
+									"key": "idEmpresa",
+									"value": "32"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "insertEmail",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idEmpresa\":\"2\",\r\n    \"idTipoContato\": \"8\",\r\n    \"email\": \"\",\r\n    \"usuarioAlteracao\":\"c110611\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://SP7688ET040:8088/slim/email",
+							"protocol": "http",
+							"host": [
+								"SP7688ET040"
+							],
+							"port": "8088",
+							"path": [
+								"slim",
+								"email"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateEmail",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idEmail\": \"4\",\r\n    \"idEmpresa\": \"2\",\r\n    \"idTipoContato\": \"8\",\r\n    \"email\": \"teste@teste.com\",\r\n    \"usuarioAlteracao\":\"c110611\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://SP7688ET040:8088/slim/email",
+							"protocol": "http",
+							"host": [
+								"SP7688ET040"
+							],
+							"port": "8088",
+							"path": [
+								"slim",
+								"email"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteEmail",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idEmail\": \"4\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://SP7688ET040:8088/slim/email",
+							"protocol": "http",
+							"host": [
+								"SP7688ET040"
+							],
+							"port": "8088",
+							"path": [
+								"slim",
+								"email"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Documento",
+			"item": [
+				{
+					"name": "uploadDocumento",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "selectDocumentoPorIdEmpresa",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://SP7688ET040:8088/slim/documento?idEmpresa=32",
+							"protocol": "http",
+							"host": [
+								"SP7688ET040"
+							],
+							"port": "8088",
+							"path": [
+								"slim",
+								"documento"
+							],
+							"query": [
+								{
+									"key": "idEmpresa",
+									"value": "32"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "insertDocumento",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idTipoDocumento\": \"\",\r\n    \"idDominio\": \"\",\r\n    \"dataValidade\": \"\",\r\n    \"nomeDocumento\": \"\",\r\n    \"observacao\":\"\",\r\n    \"usuarioAlteracao\":\"c110611\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://SP7688ET040:8088/slim/documento",
+							"protocol": "http",
+							"host": [
+								"SP7688ET040"
+							],
+							"port": "8088",
+							"path": [
+								"slim",
+								"documento"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateDocumento",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idDocumento\": \"\",\r\n    \"idTipoDocumento\": \"\",\r\n    \"idDominio\": \"\",\r\n    \"dataValidade\": \"\",\r\n    \"nomeDocumento\": \"\",\r\n    \"observacao\":\"\",\r\n    \"usuarioAlteracao\":\"c110611\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://SP7688ET040:8088/slim/documento",
+							"protocol": "http",
+							"host": [
+								"SP7688ET040"
+							],
+							"port": "8088",
+							"path": [
+								"slim",
+								"documento"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteDocumento",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idDocumento\": \"4\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://SP7688ET040:8088/slim/documento",
+							"protocol": "http",
+							"host": [
+								"SP7688ET040"
+							],
+							"port": "8088",
+							"path": [
+								"slim",
+								"documento"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Empresa",
+			"item": [
+				{
+					"name": "selectEmpresa",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://SP7688ET040:8088/slim/empresa",
+							"protocol": "http",
+							"host": [
+								"SP7688ET040"
+							],
+							"port": "8088",
+							"path": [
+								"slim",
+								"empresa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "selectEmpresaPorId",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://SP7688ET040:8088/slim/empresaPorId?idEmpresa=32",
+							"protocol": "http",
+							"host": [
+								"SP7688ET040"
+							],
+							"port": "8088",
+							"path": [
+								"slim",
+								"empresaPorId"
+							],
+							"query": [
+								{
+									"key": "idEmpresa",
+									"value": "32"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "selectEmpresaPorNomeOuCnpj",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://SP7688ET040:8088/slim/empresaPorNomeOuCnpj?empresa=a&cnpj=",
+							"protocol": "http",
+							"host": [
+								"SP7688ET040"
+							],
+							"port": "8088",
+							"path": [
+								"slim",
+								"empresaPorNomeOuCnpj"
+							],
+							"query": [
+								{
+									"key": "empresa",
+									"value": "a"
+								},
+								{
+									"key": "cnpj",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "insertEmpresa",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"empresa\": \"Empresa ÉÊÈÊË\",\r\n    \"cnpj\": \"78792772000109\",\r\n    \"endereco\": \"ÉÊÈÊË\",\r\n    \"cidade\": \"ÉÊÈÊË\",\r\n    \"uf\": \"DF\",\r\n    \"cep\": \"12345678\",\r\n    \"observacao\": \"ÉÊÈÊË\",\r\n    \"ativo\": \"1\",\r\n    \"usuarioAlteracao\":\"c110611\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://SP7688ET040:8088/slim/empresa",
+							"protocol": "http",
+							"host": [
+								"SP7688ET040"
+							],
+							"port": "8088",
+							"path": [
+								"slim",
+								"empresa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateEmpresa",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idEmpresa\": \"33\",\r\n    \"empresa\": \"Empresa ÉÊÈÊËÍÌÎÏ\",\r\n    \"cnpj\": \"78792772000109\",\r\n    \"endereco\": \"ÉÊÈÊËÍÌÎÏ\",\r\n    \"cidade\": \"ÉÊÈÊËÍÌÎÏ\",\r\n    \"uf\": \"DF\",\r\n    \"cep\": \"12345678\",\r\n    \"observacao\": \"ÉÊÈÊËÍÌÎÏ\",\r\n    \"ativo\": \"1\",\r\n    \"usuarioAlteracao\":\"c110611\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://SP7688ET040:8088/slim/empresa",
+							"protocol": "http",
+							"host": [
+								"SP7688ET040"
+							],
+							"port": "8088",
+							"path": [
+								"slim",
+								"empresa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteEmpresa",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idEmpresa\": \"33\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://SP7688ET040:8088/slim/empresa",
+							"protocol": "http",
+							"host": [
+								"SP7688ET040"
+							],
+							"port": "8088",
+							"path": [
+								"slim",
+								"empresa"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Contrato",
+			"item": [
+				{
+					"name": "selectContratoPorIdEmpresa",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://SP7688ET040:8088/slim/contratoPorIdEmpresa?idEmpresa=33",
+							"protocol": "http",
+							"host": [
+								"SP7688ET040"
+							],
+							"port": "8088",
+							"path": [
+								"slim",
+								"contratoPorIdEmpresa"
+							],
+							"query": [
+								{
+									"key": "idEmpresa",
+									"value": "33"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "insertContrato",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"contrato\": \"Contrato X\",\r\n\t\"idEmpresa\": \"33\",\r\n\t\"dataInicio\": \"2020-01-01\",\r\n\t\"dataFim\": \"2025-01-01\",\r\n\t\"idTipoContrato\": \"1\",\r\n\t\"valorGlobalInicial\": \"1000000.00\",\r\n\t\"objetoContratual\": \"Objeto X\",\r\n\t\"compromissoSiplo\":  \"\",\r\n\t\"numeroProcesso\": \"123456\",\r\n\t\"diaPagamento\": \"1\",\r\n\t\"qtdDiasAlertarPagamento\": \"10\",\r\n\t\"prazoRecebimentoNotaFiscal\": \"10\",\r\n\t\"diaAteste\": \"10\",\r\n\t\"qtdDiasAlertarAteste\": \"10\",\r\n\t\"ordemServico\": \"999999\",\r\n\t\"usuarioAlteracao\": \"c110611\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://SP7688ET040:8088/slim/contrato",
+							"protocol": "http",
+							"host": [
+								"SP7688ET040"
+							],
+							"port": "8088",
+							"path": [
+								"slim",
+								"contrato"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateContrato",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idContrato\": \"\",\r\n\t\"contrato\": \"\",\r\n\t\"idEmpresa\": \"32\",\r\n\t\"dataInicio\": \"\",\r\n\t\"dataFim\": \"\",\r\n\t\"idTipoContrato\": \"\",\r\n\t\"valorGlobalInicial\": \"\",\r\n\t\"objetoContratual\": \"\",\r\n\t\"compromissoSiplo\":  \"\",\r\n\t\"numeroProcesso\": \"\",\r\n\t\"diaPagamento\": \"\",\r\n\t\"qtdDiasAlertarPagamento\": \"\",\r\n\t\"prazoRecebimentoNotaFiscal\": \"\",\r\n\t\"diaAteste\": \"\",\r\n\t\"qtdDiasAlertarAteste\": \"\",\r\n\t\"ordemServico\": \"\",\r\n\t\"usuarioAlteracao\": \"c110611\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://SP7688ET040:8088/slim/contrato",
+							"protocol": "http",
+							"host": [
+								"SP7688ET040"
+							],
+							"port": "8088",
+							"path": [
+								"slim",
+								"contrato"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteContrato",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idContrato\":\"52\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://SP7688ET040:8088/slim/contrato",
+							"protocol": "http",
+							"host": [
+								"SP7688ET040"
+							],
+							"port": "8088",
+							"path": [
+								"slim",
+								"contrato"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Login",
+			"item": [],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Uf",
+			"item": [
+				{
+					"name": "selectUf",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://SP7688ET040:8088/slim/uf",
+							"protocol": "http",
+							"host": [
+								"SP7688ET040"
+							],
+							"port": "8088",
+							"path": [
+								"slim",
+								"uf"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UF IBGE",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://servicodados.ibge.gov.br/api/v1/localidades/estados",
+							"protocol": "https",
+							"host": [
+								"servicodados",
+								"ibge",
+								"gov",
+								"br"
+							],
+							"path": [
+								"api",
+								"v1",
+								"localidades",
+								"estados"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "DominioDocumento",
+			"item": [
+				{
+					"name": "selectDominioDocumento",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://SP7688ET040:8088/slim/dominioDocumento",
+							"protocol": "http",
+							"host": [
+								"SP7688ET040"
+							],
+							"port": "8088",
+							"path": [
+								"slim",
+								"dominioDocumento"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "insertDominioDocumento",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dominioDocumento\":\"TI\",\r\n    \"usuarioAlteracao\":\"c110611\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://SP7688ET040:8088/slim/dominioDocumento",
+							"protocol": "http",
+							"host": [
+								"SP7688ET040"
+							],
+							"port": "8088",
+							"path": [
+								"slim",
+								"dominioDocumento"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateDominioDocumento",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dominioDocumento\":\"\",\r\n    \"usuarioAlteracao\":\"c999999\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://SP7688ET040:8088/slim/dominioDocumento",
+							"protocol": "http",
+							"host": [
+								"SP7688ET040"
+							],
+							"port": "8088",
+							"path": [
+								"slim",
+								"dominioDocumento"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteDominioDocumento",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idDominioDocumento\":\"59\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://SP7688ET040:8088/slim/dominioDocumento",
+							"protocol": "http",
+							"host": [
+								"SP7688ET040"
+							],
+							"port": "8088",
+							"path": [
+								"slim",
+								"dominioDocumento"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
