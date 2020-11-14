@@ -1,6 +1,7 @@
 <?php
 namespace app\dao;
 use app\model\Empresa;
+use app\dao\DbUtil;
 
 class EmpresaDAO extends Conexao {
 
@@ -28,13 +29,18 @@ class EmpresaDAO extends Conexao {
     }
 
     public function selectEmpresaPorNomeOuCnpj(Empresa $model) {
+
+        $empresa = DbUtil::prepareNullValue($model->getEmpresa());
+        $cnpj = DbUtil::prepareNullValue($model->getCnpj());
+
         $sql = "EXEC [contratos].[empresa_selecionar_por_nome_ou_cnpj]
-                                    @empresa = '{$model->getEmpresa()}', 
-                                    @cnpj = '{$model->getCnpj()}'";
+                                    @empresa = {$empresa}, 
+                                    @cnpj = {$cnpj}";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute();
         $result = $stmt->fetchAll(\PDO::FETCH_ASSOC);
         return $result;
+
     }
 
     public function insertEmpresa(Empresa $model) {
