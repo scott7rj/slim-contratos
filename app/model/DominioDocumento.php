@@ -1,10 +1,15 @@
 <?php
 namespace app\model;
+use app\model\AppModel;
 
-final class DominioDocumento {
+final class DominioDocumento extends AppModel {
     private $idDominioDocumento;
     private $DominioDocumento;
 
+    public function __construct() {
+        parent::__construct();
+    }
+    
     /**
      * @return mixed
      */

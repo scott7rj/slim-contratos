@@ -1,7 +1,8 @@
 <?php
 namespace app\model;
+use app\model\AppModel;
 
-final class Documento {
+final class Documento extends AppModel {
     private $idDocumento;
     private $idTipoDocumento;
     private $idEmpresa;
@@ -14,7 +15,9 @@ final class Documento {
     private $usuarioAlteracao;
     private $observacao;
     
-
+    public function __construct() {
+        parent::__construct();
+    }
     /**
      * @return mixed
      */

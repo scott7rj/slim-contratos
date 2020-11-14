@@ -3,7 +3,7 @@ namespace app\controller;
 
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Message\ResponseInterface as Response;
-use app\DAO\TipoContatoDAO;
+use app\dao\TipoContatoDAO;
 use app\model\TipoContato;
 use app\controller\AppController;
 use Exception;

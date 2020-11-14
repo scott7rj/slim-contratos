@@ -2,12 +2,12 @@
 namespace app\model;
 use app\model\AppModel;
 
-final class Telefone extends AppModel {
-    private $idTelefone;
+final class Email extends AppModel {
+    private $idEmail;
     private $idEmpresa;
     private $idTipoContato;
     private $tipoContato;
-    private $telefone;
+    private $email;
     private $usuarioAlteracao;
     private $ultimaAlteracao;
 
@@ -18,19 +18,19 @@ final class Telefone extends AppModel {
     /**
      * @return mixed
      */
-    public function getIdTelefone()
+    public function getIdEmail()
     {
-        return $this->idTelefone;
+        return $this->idEmail;
     }
 
     /**
-     * @param mixed $idTelefone
+     * @param mixed $idEmail
      *
      * @return self
      */
-    public function setIdTelefone($idTelefone)
+    public function setIdEmail($idEmail)
     {
-        $this->idTelefone = $idTelefone;
+        $this->idEmail = $idEmail;
 
         return $this;
     }
@@ -98,19 +98,19 @@ final class Telefone extends AppModel {
     /**
      * @return mixed
      */
-    public function getTelefone()
+    public function getEmail()
     {
-        return $this->telefone;
+        return $this->email;
     }
 
     /**
-     * @param mixed $telefone
+     * @param mixed $Email
      *
      * @return self
      */
-    public function setTelefone($telefone)
+    public function setEmail($email)
     {
-        $this->telefone = $telefone;
+        $this->email = $email;
 
         return $this;
     }

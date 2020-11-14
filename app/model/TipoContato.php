@@ -1,7 +1,6 @@
 <?php
 namespace app\model;
-
-use AppModel;
+use app\model\AppModel;
 
 final class TipoContato extends AppModel {
     private $idTipoContato;

@@ -1,5 +1,5 @@
 <?php
-namespace app\DAO;
+namespace app\dao;
 use app\model\TipoContrato;
 
 class TipoContratoDAO extends Conexao {

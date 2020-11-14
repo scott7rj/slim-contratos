@@ -1,5 +1,5 @@
 <?php
-namespace app\DAO;
+namespace app\dao;
 
 use Exception;
 use PDOException;

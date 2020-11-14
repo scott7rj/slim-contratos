@@ -1,5 +1,5 @@
 <?php
-namespace app\DAO;
+namespace app\dao;
 use app\model\Documento;
 
 class DocumentoDAO extends Conexao {

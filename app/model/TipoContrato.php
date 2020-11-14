@@ -1,13 +1,18 @@
 <?php
 namespace app\model;
+use app\model\AppModel;
 
-final class TipoContrato {
+final class TipoContrato extends AppModel {
     private $idTipoContrato;
     private $tipoContrato;
     private $ativo;
     private $ultimaAlteracao;
     private $usuarioAlteracao;
 
+    public function __construct() {
+        parent::__construct();
+    }
+    
     /**
      * @return mixed
      */

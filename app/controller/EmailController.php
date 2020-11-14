@@ -3,21 +3,21 @@ namespace app\controller;
 
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Message\ResponseInterface as Response;
-use app\dao\DocumentoDAO;
-use app\model\Documento;
+use app\dao\EmailDAO;
+use app\model\Email;
 use app\controller\AppController;
 use Exception;
 
-final class DocumentoController extends AppController {
+final class EmailController extends AppController {
     public function __construct() {
         parent::__construct();
     }
-    public function selectDocumentoPorIdEmpresa(Request $request, Response $response, array $args): Response {
+    public function selectEmailPorIdEmpresa(Request $request, Response $response, array $args): Response {
         try {
-            $data = $request->getQueryParams();
+            $data = $request->getParsedBody();
             $idEmpresa = $data['idEmpresa'];
-            $documentoDAO = new DocumentoDAO();
-            $result = $documentoDAO->selectDocumentoPorIdEmpresa($idEmpresa);
+            $emailDAO = new EmailDAO();
+            $result = $emailDAO->selectEmailPorIdEmpresa($idEmpresa);
             $response = $response->withJson($result);
             return $response;
         } catch (Exception $e) {
@@ -25,35 +25,16 @@ final class DocumentoController extends AppController {
             return $response;
         }
     }
-    public function insertDocumento(Request $request, Response $response, array $args): Response {
+    public function insertEmail(Request $request, Response $response, array $args): Response {
         try {
             $data = $request->getParsedBody();
-            $documentoDAO = new DocumentoDAO();
-            $model = new Documento();
-            $model->setIdTipoDocumento($data['idTipoDocumento']);
-            $model->setNomeDocumento($data['nomeDocumento']);
-            $model->setUsuarioAlteracao($data['usuarioAlteracao']);
-            $result = $documentoDAO->insertDocumento($model);
-            $response = $response->withJson([
-                'message' => $result
-            ]);
-            return $response;
-        } catch (Exception $e) {
-            $response = $response->withJson($this->getErroJson($e->getMessage()));
-            return $response;
-        }
-    }
-    public function updateDocumento(Request $request, Response $response, array $args): Response {
-        try {
-            $data = $request->getParsedBody();
-            $documentoDAO = new DocumentoDAO();
-            $model = new Documento();
-            $model->setIdDocumento($data['idDocumento']);
-            $model->setIdTipoDocumento($data['idTipoDocumento']);
+            $emailDAO = new EmailDAO();
+            $model = new Email();
             $model->setIdEmpresa($data['idEmpresa']);
-            $model->setNomeDocumento($data['nomeDocumento']);
+            $model->setIdTipoContato($data['idTipoContato']);
+            $model->setEmail($data['email']);
             $model->setUsuarioAlteracao($data['usuarioAlteracao']);
-            $result = $documentoDAO->updateDocumento($model);
+            $result = $emailDAO->insertEmail($model);
             $response = $response->withJson([
                 'message' => $result
             ]);
@@ -63,13 +44,33 @@ final class DocumentoController extends AppController {
             return $response;
         }
     }
-    public function deleteDocumento(Request $request, Response $response, array $args): Response {
+    public function updateEmail(Request $request, Response $response, array $args): Response {
         try {
             $data = $request->getParsedBody();
-            $documentoDAO = new DocumentoDAO();
-            $model = new Documento();
-            $model->setIdDocumento($data['idDocumento']);
-            $result = $documentoDAO->deleteDocumento($model);
+            $emailDAO = new EmailDAO();
+            $model = new Email();
+            $model->setIdEmail($data['idEmail']);
+            $model->setIdEmpresa($data['idEmpresa']);
+            $model->setIdTipoContato($data['idTipoContato']);
+            $model->setEmail($data['email']);
+            $model->setUsuarioAlteracao($data['usuarioAlteracao']);
+            $result = $emailDAO->updateEmail($model);
+            $response = $response->withJson([
+                'message' => $result
+            ]);
+            return $response;
+        } catch (Exception $e) {
+            $response = $response->withJson($this->getErroJson($e->getMessage()));
+            return $response;
+        }
+    }
+    public function deleteEmail(Request $request, Response $response, array $args): Response {
+        try {
+            $data = $request->getParsedBody();
+            $emailDAO = new EmailDAO();
+            $model = new Email();
+            $model->setIdEmail($data['idEmail']);
+            $result = $emailDAO->deleteEmail($model);
             $response = $response->withJson([
                 'message' => $result
             ]);

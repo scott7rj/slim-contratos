@@ -8,21 +8,16 @@ use app\ldap\LdapDAO;
 use app\model\Usuario;
 use Exception;
 
-final class LoginController extends AppController {
+final class InitController extends AppController {
 
     public function __construct() {
         parent::__construct();
     }
 
-    public function autenticar(Request $request, Response $response, array $args): Response {
+    public function init(Request $request, Response $response, array $args): Response {
     	try {
-    		$data = $request->getParsedBody();
-    		$model = new Usuario();
-            $model->setMatricula($data['matricula']);
-            $model->setPassword($data['password']);
-            $ldapDAO = new LdapDAO();
-            $result = $ldapDAO->autenticar($model);
-            $response = $response->withJson($result);
+    		$response->getBody()->write("Hello Slim");
+            //$response = $response->withJson($result);
             return $response;
         } catch (Exception $e) {
             $response = $response->withJson($this->getErroJson($e->getMessage()));

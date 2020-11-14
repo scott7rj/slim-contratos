@@ -1,42 +1,47 @@
 <?php
 namespace app\model;
+use app\model\AppModel;
 
-final class Contrato {
-    private $id_contrato;
+final class Contrato extends AppModel {
+    private $idContrato;
     private $contrato;
-    private $id_empresa;
-    private $data_inicio;
-    private $data_fim;
-    private $id_tipo_contrato;
-    private $valor_global_incial;
-    private $objeto_contratual;
-    private $compromisso_siplo;
-    private $numero_processo;
-    private $dia_pagamento;
-    private $qtd_dias_alertar_pagamento;
-    private $prazo_recebimento_nota_fiscal;
-    private $dia_ateste;
-    private $qtd_dias_alertar_ateste;
-    private $ordem_servico;
-    private $ultima_alteracao;
-    private $usuario_alteracao;
+    private $idEmpresa;
+    private $empresa;
+    private $dataInicio;
+    private $dataFim;
+    private $idTipoContrato;
+    private $tipoContrato;
+    private $valorGlobalInicial;
+    private $objetoContratual;
+    private $compromissoSiplo;
+    private $numeroProcesso;
+    private $diaPagamento;
+    private $qtdDiasAlertarPagamento;
+    private $prazoRecebimentoNotaFiscal;
+    private $diaAteste;
+    private $qtdDiasAlertarAteste;
+    private $ordemServico;
+
+    public function __construct() {
+        parent::__construct();
+    }
 
     /**
      * @return mixed
      */
     public function getIdContrato()
     {
-        return $this->id_contrato;
+        return $this->idContrato;
     }
 
     /**
-     * @param mixed $id_contrato
+     * @param mixed $idContrato
      *
      * @return self
      */
-    public function setIdContrato($id_contrato)
+    public function setIdContrato($idContrato)
     {
-        $this->id_contrato = $id_contrato;
+        $this->idContrato = $idContrato;
 
         return $this;
     }
@@ -66,17 +71,37 @@ final class Contrato {
      */
     public function getIdEmpresa()
     {
-        return $this->id_empresa;
+        return $this->idEmpresa;
     }
 
     /**
-     * @param mixed $id_empresa
+     * @param mixed $idEmpresa
      *
      * @return self
      */
-    public function setIdEmpresa($id_empresa)
+    public function setIdEmpresa($idEmpresa)
     {
-        $this->id_empresa = $id_empresa;
+        $this->idEmpresa = $idEmpresa;
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEmpresa()
+    {
+        return $this->empresa;
+    }
+
+    /**
+     * @param mixed $empresa
+     *
+     * @return self
+     */
+    public function setEmpresa($empresa)
+    {
+        $this->empresa = $empresa;
 
         return $this;
     }
@@ -86,17 +111,17 @@ final class Contrato {
      */
     public function getDataInicio()
     {
-        return $this->data_inicio;
+        return $this->dataInicio;
     }
 
     /**
-     * @param mixed $data_inicio
+     * @param mixed $dataInicio
      *
      * @return self
      */
-    public function setDataInicio($data_inicio)
+    public function setDataInicio($dataInicio)
     {
-        $this->data_inicio = $data_inicio;
+        $this->dataInicio = $dataInicio;
 
         return $this;
     }
@@ -106,17 +131,17 @@ final class Contrato {
      */
     public function getDataFim()
     {
-        return $this->data_fim;
+        return $this->dataFim;
     }
 
     /**
-     * @param mixed $data_fim
+     * @param mixed $dataFim
      *
      * @return self
      */
-    public function setDataFim($data_fim)
+    public function setDataFim($dataFim)
     {
-        $this->data_fim = $data_fim;
+        $this->dataFim = $dataFim;
 
         return $this;
     }
@@ -126,17 +151,17 @@ final class Contrato {
      */
     public function getIdTipoContrato()
     {
-        return $this->id_tipo_contrato;
+        return $this->idTipoContrato;
     }
 
     /**
-     * @param mixed $id_tipo_contrato
+     * @param mixed $idTipoContrato
      *
      * @return self
      */
-    public function setIdTipoContrato($id_tipo_contrato)
+    public function setIdTipoContrato($idTipoContrato)
     {
-        $this->id_tipo_contrato = $id_tipo_contrato;
+        $this->idTipoContrato = $idTipoContrato;
 
         return $this;
     }
@@ -144,19 +169,39 @@ final class Contrato {
     /**
      * @return mixed
      */
-    public function getValorGlobalIncial()
+    public function getTipoContrato()
     {
-        return $this->valor_global_incial;
+        return $this->tipoContrato;
     }
 
     /**
-     * @param mixed $valor_global_incial
+     * @param mixed $tipoContrato
      *
      * @return self
      */
-    public function setValorGlobalIncial($valor_global_incial)
+    public function setTipoContrato($tipoContrato)
     {
-        $this->valor_global_incial = $valor_global_incial;
+        $this->tipoContrato = $tipoContrato;
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getValorGlobalInicial()
+    {
+        return $this->valorGlobalInicial;
+    }
+
+    /**
+     * @param mixed $valorGlobalIncial
+     *
+     * @return self
+     */
+    public function setValorGlobalInicial($valorGlobalInicial)
+    {
+        $this->valorGlobalInicial = $valorGlobalInicial;
 
         return $this;
     }
@@ -166,17 +211,17 @@ final class Contrato {
      */
     public function getObjetoContratual()
     {
-        return $this->objeto_contratual;
+        return $this->objetoContratual;
     }
 
     /**
-     * @param mixed $objeto_contratual
+     * @param mixed $objetoContratual
      *
      * @return self
      */
-    public function setObjetoContratual($objeto_contratual)
+    public function setObjetoContratual($objetoContratual)
     {
-        $this->objeto_contratual = $objeto_contratual;
+        $this->objetoContratual = $objetoContratual;
 
         return $this;
     }
@@ -186,17 +231,17 @@ final class Contrato {
      */
     public function getCompromissoSiplo()
     {
-        return $this->compromisso_siplo;
+        return $this->compromissoSiplo;
     }
 
     /**
-     * @param mixed $compromisso_siplo
+     * @param mixed $compromissoSiplo
      *
      * @return self
      */
-    public function setCompromissoSiplo($compromisso_siplo)
+    public function setCompromissoSiplo($compromissoSiplo)
     {
-        $this->compromisso_siplo = $compromisso_siplo;
+        $this->compromissoSiplo = $compromissoSiplo;
 
         return $this;
     }
@@ -206,17 +251,17 @@ final class Contrato {
      */
     public function getNumeroProcesso()
     {
-        return $this->numero_processo;
+        return $this->numeroProcesso;
     }
 
     /**
-     * @param mixed $numero_processo
+     * @param mixed $numeroProcesso
      *
      * @return self
      */
-    public function setNumeroProcesso($numero_processo)
+    public function setNumeroProcesso($numeroProcesso)
     {
-        $this->numero_processo = $numero_processo;
+        $this->numeroProcesso = $numeroProcesso;
 
         return $this;
     }
@@ -226,17 +271,17 @@ final class Contrato {
      */
     public function getDiaPagamento()
     {
-        return $this->dia_pagamento;
+        return $this->diaPagamento;
     }
 
     /**
-     * @param mixed $dia_pagamento
+     * @param mixed $diaPagamento
      *
      * @return self
      */
-    public function setDiaPagamento($dia_pagamento)
+    public function setDiaPagamento($diaPagamento)
     {
-        $this->dia_pagamento = $dia_pagamento;
+        $this->diaPagamento = $diaPagamento;
 
         return $this;
     }
@@ -246,17 +291,17 @@ final class Contrato {
      */
     public function getQtdDiasAlertarPagamento()
     {
-        return $this->qtd_dias_alertar_pagamento;
+        return $this->qtdDiasAlertarPagamento;
     }
 
     /**
-     * @param mixed $qtd_dias_alertar_pagamento
+     * @param mixed $qtdDiasAlertarPagamento
      *
      * @return self
      */
-    public function setQtdDiasAlertarPagamento($qtd_dias_alertar_pagamento)
+    public function setQtdDiasAlertarPagamento($qtdDiasAlertarPagamento)
     {
-        $this->qtd_dias_alertar_pagamento = $qtd_dias_alertar_pagamento;
+        $this->qtdDiasAlertarPagamento = $qtdDiasAlertarPagamento;
 
         return $this;
     }
@@ -266,17 +311,17 @@ final class Contrato {
      */
     public function getPrazoRecebimentoNotaFiscal()
     {
-        return $this->prazo_recebimento_nota_fiscal;
+        return $this->prazoRecebimentoNotaFiscal;
     }
 
     /**
-     * @param mixed $prazo_recebimento_nota_fiscal
+     * @param mixed $prazoRecebimentoNotaFiscal
      *
      * @return self
      */
-    public function setPrazoRecebimentoNotaFiscal($prazo_recebimento_nota_fiscal)
+    public function setPrazoRecebimentoNotaFiscal($prazoRecebimentoNotaFiscal)
     {
-        $this->prazo_recebimento_nota_fiscal = $prazo_recebimento_nota_fiscal;
+        $this->prazoRecebimentoNotaFiscal = $prazoRecebimentoNotaFiscal;
 
         return $this;
     }
@@ -286,17 +331,17 @@ final class Contrato {
      */
     public function getDiaAteste()
     {
-        return $this->dia_ateste;
+        return $this->diaAteste;
     }
 
     /**
-     * @param mixed $dia_ateste
+     * @param mixed $diaAteste
      *
      * @return self
      */
-    public function setDiaAteste($dia_ateste)
+    public function setDiaAteste($diaAteste)
     {
-        $this->dia_ateste = $dia_ateste;
+        $this->diaAteste = $diaAteste;
 
         return $this;
     }
@@ -306,17 +351,17 @@ final class Contrato {
      */
     public function getQtdDiasAlertarAteste()
     {
-        return $this->qtd_dias_alertar_ateste;
+        return $this->qtdDiasAlertarAteste;
     }
 
     /**
-     * @param mixed $qtd_dias_alertar_ateste
+     * @param mixed $qtdDiasAlertarAteste
      *
      * @return self
      */
-    public function setQtdDiasAlertarAteste($qtd_dias_alertar_ateste)
+    public function setQtdDiasAlertarAteste($qtdDiasAlertarAteste)
     {
-        $this->qtd_dias_alertar_ateste = $qtd_dias_alertar_ateste;
+        $this->qtdDiasAlertarAteste = $qtdDiasAlertarAteste;
 
         return $this;
     }
@@ -326,57 +371,17 @@ final class Contrato {
      */
     public function getOrdemServico()
     {
-        return $this->ordem_servico;
+        return $this->ordemServico;
     }
 
     /**
-     * @param mixed $ordem_servico
+     * @param mixed $ordemServico
      *
      * @return self
      */
-    public function setOrdemServico($ordem_servico)
+    public function setOrdemServico($ordemServico)
     {
-        $this->ordem_servico = $ordem_servico;
-
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getUltimaAlteracao()
-    {
-        return $this->ultima_alteracao;
-    }
-
-    /**
-     * @param mixed $ultima_alteracao
-     *
-     * @return self
-     */
-    public function setUltimaAlteracao($ultima_alteracao)
-    {
-        $this->ultima_alteracao = $ultima_alteracao;
-
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getUsuarioAlteracao()
-    {
-        return $this->usuario_alteracao;
-    }
-
-    /**
-     * @param mixed $usuario_alteracao
-     *
-     * @return self
-     */
-    public function setUsuarioAlteracao($usuario_alteracao)
-    {
-        $this->usuario_alteracao = $usuario_alteracao;
+        $this->ordemServico = $ordemServico;
 
         return $this;
     }

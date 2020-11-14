@@ -1,7 +1,8 @@
 <?php
 namespace app\model;
+use app\model\AppModel;
 
-final class Empresa {
+final class Empresa extends AppModel {
     private $id_empresa;
     private $empresa;
     private $cnpj;
@@ -14,6 +15,10 @@ final class Empresa {
     private $ultima_alteracao;
     private $usuario_alteracao;
 
+    public function __construct() {
+        parent::__construct();
+    }
+    
     /**
      * @return mixed
      */

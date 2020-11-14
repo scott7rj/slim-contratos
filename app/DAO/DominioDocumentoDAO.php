@@ -1,5 +1,5 @@
 <?php
-namespace app\DAO;
+namespace app\dao;
 use app\model\DominioDocumento;
 
 class DominioDocumentoDAO extends Conexao {
@@ -8,7 +8,7 @@ class DominioDocumentoDAO extends Conexao {
     }
     public function selectDominioDocumento() {
         try {
-            $stmt = $this->pdo->prepare("SELECT * FROM [contratos].[fn_dominio_documento_selecionar]");
+            $stmt = $this->pdo->prepare("SELECT * FROM [contratos].[fn_dominio_documento_selecionar]()");
             $stmt->execute();
             $result = $stmt->fetchAll(\PDO::FETCH_ASSOC);
             return $result;

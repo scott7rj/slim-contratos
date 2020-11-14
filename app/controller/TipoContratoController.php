@@ -3,9 +3,9 @@ namespace app\controller;
 
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Message\ResponseInterface as Response;
-use app\DAO\TipoContratoDAO;
+use app\dao\TipoContratoDAO;
 use app\model\TipoContrato;
-use AppController;
+use app\controller\AppController;
 use Exception;
 
 final class TipoContratoController extends AppController {

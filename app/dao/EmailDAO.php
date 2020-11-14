@@ -1,25 +1,25 @@
 <?php
 namespace app\dao;
-use app\model\Telefone;
+use app\model\Email;
 
-class TelefoneDAO extends Conexao {
+class EmailDAO extends Conexao {
     public function __construct() {
         parent::__construct();
     }
-    public function selectTelefonePorIdEmpresa($idEmpresa) {
-        $stmt = $this->pdo->prepare("SELECT * FROM [contratos].[fn_telefone_selecionar_por_id_empresa](:id_empresa)");
+    public function selectEmailPorIdEmpresa($idEmpresa) {
+        $stmt = $this->pdo->prepare("SELECT * FROM [contratos].[fn_Email_selecionar_por_id_empresa](:id_empresa)");
         $stmt->bindParam('id_empresa', $idEmpresa);
         $stmt->execute();
         $result = $stmt->fetchAll(\PDO::FETCH_ASSOC);
         return $result;
     }
 
-    public function insertTelefone(Telefone $model) {
+    public function insertEmail(Email $model) {
         try {
-            $stmt = $this->pdo->prepare("EXEC [contratos].[telefone_inserir] 
+            $stmt = $this->pdo->prepare("EXEC [contratos].[Email_inserir] 
                                         @id_empresa = '{$model->getIdEmpresa()}', 
                                         @id_tipo_contato = '{$model->getIdTipoContato()}', 
-                                        @telefone = '{$model->getTelefone()}', 
+                                        @Email = '{$model->getEmail()}', 
                                         @usuario_alteracao = '{$model->getUsuarioAlteracao()}'");
             $stmt->execute();
             $result = $stmt->fetch(\PDO::FETCH_COLUMN);
@@ -29,13 +29,13 @@ class TelefoneDAO extends Conexao {
         }
     }
 
-    public function updateTelefone(Telefone $model) {
+    public function updateEmail(Email $model) {
         try {
-        $stmt = $this->pdo->prepare("EXEC [contratos].[telefone_alterar] 
-                                        @id_telefone = '{$model->getIdTelefone()}', 
+        $stmt = $this->pdo->prepare("EXEC [contratos].[Email_alterar] 
+                                        @id_Email = '{$model->getIdEmail()}', 
                                         @id_empresa = '{$model->getIdEmpresa()}', 
                                         @id_tipo_contato = '{$model->getIdTipoContato()}', 
-                                        @telefone = '{$model->getTelefone()}', 
+                                        @Email = '{$model->getEmail()}', 
                                         @usuario_alteracao = '{$model->getUsuarioAlteracao()}'");
             $stmt->execute();
             $result = $stmt->fetch(\PDO::FETCH_COLUMN);
@@ -45,10 +45,10 @@ class TelefoneDAO extends Conexao {
         }
     }
 
-    public function deleteTelefone(Telefone $model) {
+    public function deleteEmail(Email $model) {
         try {
-            $stmt = $this->pdo->prepare("EXEC [contratos].[telefone_remover] 
-                                        @id_telefone = '{$model->getIdTelefone()}'");
+            $stmt = $this->pdo->prepare("EXEC [contratos].[Email_remover] 
+                                        @id_Email = '{$model->getIdEmail()}'");
             $stmt->execute();
             $result = $stmt->fetch(\PDO::FETCH_COLUMN);
             return $result;

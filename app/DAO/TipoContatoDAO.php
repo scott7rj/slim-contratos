@@ -1,5 +1,5 @@
 <?php
-namespace app\DAO;
+namespace app\dao;
 use app\model\TipoContato;
 use Exception;
 

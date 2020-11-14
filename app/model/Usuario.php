@@ -1,6 +1,5 @@
 <?php
 namespace app\model;
-
 use app\model\AppModel;
 
 final class Usuario extends AppModel {
@@ -13,7 +12,7 @@ final class Usuario extends AppModel {
     private $unidade;
     private $password;
 
-   public function __construct() {
+    public function __construct() {
         parent::__construct();
     }
 

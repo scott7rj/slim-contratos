@@ -1,5 +1,5 @@
 <?php
-namespace app\LDAP;
+namespace app\ldap;
 
 use app\model\Usuario;
 
