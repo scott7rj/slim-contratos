@@ -10,6 +10,7 @@ use app\controller\DocumentoController;
 use app\controller\EmpresaController;
 use app\controller\TipoContratoController;
 use app\controller\ContratoController;
+use app\controller\TipoPenalidadeController;
 
 use app\controller\TwigController;
 $app->get('/twig', TwigController::class . ':twig');
@@ -25,10 +26,10 @@ $app->post('/tipoContato', TipoContatoController::class . ':insertTipoContato');
 $app->put('/tipoContato', TipoContatoController::class . ':updateTipoContato');
 $app->delete('/tipoContato', TipoContatoController::class . ':deleteTipoContato');
 //==========
-$app->get('/penalidade', PenalidadeController::class . ':selectPenalidadeo');
-$app->post('/penalidade', PenalidadeController::class . ':insertPenalidade');
-$app->put('/penalidade', PenalidadeController::class . ':updatePenalidade');
-$app->delete('/penalidade', PenalidadeController::class . ':deletePenalidade');
+$app->get('/tipoPenalidade', TipoPenalidadeController::class . ':selectTipoPenalidade');
+$app->post('/tipoPenalidade', TipoPenalidadeController::class . ':insertTipoPenalidade');
+$app->put('/tipoPenalidade', TipoPenalidadeController::class . ':updateTipoPenalidade');
+$app->delete('/tipoPenalidade', TipoPenalidadeController::class . ':deleteTipoPenalidade');
 //==========
 $app->get('/empresa', EmpresaController::class . ':selectEmpresa');
 $app->get('/empresaPorId', EmpresaController::class . ':selectEmpresaPorId');

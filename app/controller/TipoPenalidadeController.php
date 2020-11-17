@@ -8,7 +8,7 @@ use app\model\TipoPenalidade;
 use app\controller\AppController;
 use Exception;
 
-final class TipoTipoPenalidadeController extends AppController {
+final class TipoPenalidadeController extends AppController {
     public function __construct() {
         parent::__construct();
     }

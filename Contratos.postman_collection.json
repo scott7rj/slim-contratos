@@ -1221,6 +1221,135 @@
 				}
 			],
 			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "TipoPenalidade",
+			"item": [
+				{
+					"name": "selectTipoPenalidade",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://SP7688ET040:8088/slim/tipoPenalidade?ativo=1",
+							"protocol": "http",
+							"host": [
+								"SP7688ET040"
+							],
+							"port": "8088",
+							"path": [
+								"slim",
+								"tipoPenalidade"
+							],
+							"query": [
+								{
+									"key": "ativo",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "insertTipoPenalidade",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tipoPenalidade\":\"MULTA\",\r\n    \"usuarioAlteracao\":\"c110611\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://SP7688ET040:8088/slim/tipoPenalidade",
+							"protocol": "http",
+							"host": [
+								"SP7688ET040"
+							],
+							"port": "8088",
+							"path": [
+								"slim",
+								"tipoPenalidade"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateTipoPenalidade",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idTipoPenalidade\":\"\",\r\n    \"tipoPenalidade\":\"\",\r\n    \"ativo\":\"1\",\r\n    \"usuarioAlteracao\":\"c999999\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://SP7688ET040:8088/slim/tipoPenalidade",
+							"protocol": "http",
+							"host": [
+								"SP7688ET040"
+							],
+							"port": "8088",
+							"path": [
+								"slim",
+								"tipoPenalidade"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteTipoPenalidade",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idTipoPenalidade\":\"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://SP7688ET040:8088/slim/tipoPenalidade",
+							"protocol": "http",
+							"host": [
+								"SP7688ET040"
+							],
+							"port": "8088",
+							"path": [
+								"slim",
+								"tipoPenalidade"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
 		}
 	],
 	"protocolProfileBehavior": {}
