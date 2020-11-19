@@ -27,20 +27,26 @@ class EmpresaDAO extends Conexao {
         $result = $stmt->fetchAll(\PDO::FETCH_ASSOC);
         return $result;
     }
-
-    public function selectEmpresaPorNomeOuCnpj(Empresa $model) {
-
-        $empresa = DbUtil::prepareNullValue($model->getEmpresa());
-        $cnpj = DbUtil::prepareNullValue($model->getCnpj());
-
-        $sql = "EXEC [contratos].[empresa_selecionar_por_nome_ou_cnpj]
-                                    @empresa = {$empresa}, 
-                                    @cnpj = {$cnpj}";
-        $stmt = $this->pdo->prepare($sql);
+    public function selectEmpresaTelefone($idEmpresa) {
+        $stmt = $this->pdo->prepare("SELECT * FROM [contratos].[fn_telefone_selecionar_por_id_empresa](:id_empresa)");
+        $stmt->bindParam('id_empresa', $idEmpresa);
         $stmt->execute();
         $result = $stmt->fetchAll(\PDO::FETCH_ASSOC);
         return $result;
-
+    }
+    public function selectEmpresaEmail($idEmpresa) {
+        $stmt = $this->pdo->prepare("SELECT * FROM [contratos].[fn_Email_selecionar_por_id_empresa](:id_empresa)");
+        $stmt->bindParam('id_empresa', $idEmpresa);
+        $stmt->execute();
+        $result = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+        return $result;
+    }
+    public function selectEmpresaDocumento($idEmpresa) {
+        $stmt = $this->pdo->prepare("SELECT * FROM [contratos].[fn_Documento_selecionar_por_id_empresa](:id_empresa)");
+        $stmt->bindParam('id_empresa', $idEmpresa);
+        $stmt->execute();
+        $result = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+        return $result;
     }
 
     public function insertEmpresa(Empresa $model) {

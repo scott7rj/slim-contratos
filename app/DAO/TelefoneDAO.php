@@ -6,13 +6,6 @@ class TelefoneDAO extends Conexao {
     public function __construct() {
         parent::__construct();
     }
-    public function selectTelefonePorIdEmpresa($idEmpresa) {
-        $stmt = $this->pdo->prepare("SELECT * FROM [contratos].[fn_telefone_selecionar_por_id_empresa](:id_empresa)");
-        $stmt->bindParam('id_empresa', $idEmpresa);
-        $stmt->execute();
-        $result = $stmt->fetchAll(\PDO::FETCH_ASSOC);
-        return $result;
-    }
 
     public function insertTelefone(Telefone $model) {
         try {

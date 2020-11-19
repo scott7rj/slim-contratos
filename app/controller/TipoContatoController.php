@@ -14,8 +14,8 @@ final class TipoContatoController extends AppController {
     }
     public function selectTipoContato(Request $request, Response $response, array $args): Response {
         try {
-            $tipoContatoDAO = new TipoContatoDAO();
-            $result = $tipoContatoDAO->selectTipoContato();
+            $dao = new TipoContatoDAO();
+            $result = $dao->selectTipoContato();
             $response = $response->withJson($result);
             return $response;
         } catch (Exception $e) {
@@ -26,11 +26,11 @@ final class TipoContatoController extends AppController {
     public function insertTipoContato(Request $request, Response $response, array $args): Response {
         try {
             $data = $request->getParsedBody();
-            $tipoContatoDAO = new TipoContatoDAO();
+            $dao = new TipoContatoDAO();
             $model = new TipoContato();
             $model->setTipoContato($data['tipoContato']);
             $model->setUsuarioAlteracao($data['usuarioAlteracao']);
-            $result = $tipoContatoDAO->insertTipoContato($model);
+            $result = $dao->insertTipoContato($model);
             $response = $response->withJson([
                 'message' => $result
             ]);
@@ -43,13 +43,13 @@ final class TipoContatoController extends AppController {
     public function updateTipoContato(Request $request, Response $response, array $args): Response {
         try {
             $data = $request->getParsedBody();
-            $tipoContatoDAO = new TipoContatoDAO();
+            $dao = new TipoContatoDAO();
             $model = new TipoContato();
             $model->setIdTipoContato($data['idTipoContato']);
             $model->setTipoContato($data['tipoContato']);
             $model->setAtivo($data['ativo']);
             $model->setUsuarioAlteracao($data['usuarioAlteracao']);
-            $result = $tipoContatoDAO->updateTipoContato($model);
+            $result = $dao->updateTipoContato($model);
             $response = $response->withJson([
                 'message' => $result
             ]);
@@ -62,10 +62,10 @@ final class TipoContatoController extends AppController {
     public function deleteTipoContato(Request $request, Response $response, array $args): Response {
         try {
             $data = $request->getParsedBody();
-            $tipoContatoDAO = new TipoContatoDAO();
+            $dao = new TipoContatoDAO();
             $model = new TipoContato();
             $model->setIdTipoContato($data['idTipoContato']);
-            $result = $tipoContatoDAO->deleteTipoContato($model);
+            $result = $dao->deleteTipoContato($model);
             $response = $response->withJson([
                 'message' => $result
             ]);

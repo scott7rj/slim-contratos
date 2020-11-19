@@ -1,0 +1,12 @@
+{
+    "require": {
+        "slim/slim": "~3.0",
+        "slim/twig-view": "~2.5",
+        "tuupola/slim-basic-auth": "^3.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "app\\": "app"
+        }
+    }
+}

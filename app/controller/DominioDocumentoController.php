@@ -14,8 +14,8 @@ final class DominioDocumentoController extends AppController {
     }
     public function selectDominioDocumento(Request $request, Response $response, array $args): Response {
         try {
-            $dominioDocumentoDAO = new DominioDocumentoDAO();
-            $result = $dominioDocumentoDAO->selectDominioDocumento();
+            $dao = new DominioDocumentoDAO();
+            $result = $dao->selectDominioDocumento();
             $response = $response->withJson($result);
             return $response;
         } catch (Exception $e) {
@@ -26,10 +26,10 @@ final class DominioDocumentoController extends AppController {
     public function insertDominioDocumento(Request $request, Response $response, array $args): Response {
         try {
             $data = $request->getParsedBody();
-            $dominioDocumentoDAO = new DominioDocumentoDAO();
+            $dao = new DominioDocumentoDAO();
             $model = new DominioDocumento();
             $model->setDominioDocumento($data['dominioDocumento']);
-            $result = $dominioDocumentoDAO->insertDominioDocumento($model);
+            $result = $dao->insertDominioDocumento($model);
             $response = $response->withJson([
                 'message' => $result
             ]);
@@ -42,11 +42,11 @@ final class DominioDocumentoController extends AppController {
     public function updateDominioDocumento(Request $request, Response $response, array $args): Response {
         try {
             $data = $request->getParsedBody();
-            $dominioDocumentoDAO = new DominioDocumentoDAO();
+            $dao = new DominioDocumentoDAO();
             $model = new DominioDocumento();
             $model->setIdDominioDocumento($data['idDominioDocumento']);
             $model->setDominioDocumento($data['dominioDocumento']);
-            $result = $dominioDocumentoDAO->updateDominioDocumento($model);
+            $result = $dao->updateDominioDocumento($model);
             $response = $response->withJson([
                 'message' => $result
             ]);
@@ -59,10 +59,10 @@ final class DominioDocumentoController extends AppController {
     public function deleteDominioDocumento(Request $request, Response $response, array $args): Response {
         try {
             $data = $request->getParsedBody();
-            $dominioDocumentoDAO = new DominioDocumentoDAO();
+            $dao = new DominioDocumentoDAO();
             $model = new DominioDocumento();
             $model->setIdDominioDocumento($data['idDominioDocumento']);
-            $result = $dominioDocumentoDAO->deleteDominioDocumento($model);
+            $result = $dao->deleteDominioDocumento($model);
             $response = $response->withJson([
                 'message' => $result
             ]);

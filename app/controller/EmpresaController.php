@@ -16,8 +16,8 @@ final class EmpresaController extends AppController {
 
     public function selectEmpresa(Request $request, Response $response, array $args): Response {
         try {
-            $empresaDAO = new EmpresaDAO();
-            $result = $empresaDAO->selectEmpresa();
+            $dao = new EmpresaDAO();
+            $result = $dao->selectEmpresa();
             $response = $response->withJson($result);
             return $response;
         } catch (Exception $e) {
@@ -29,10 +29,10 @@ final class EmpresaController extends AppController {
     public function selectEmpresaPorId(Request $request, Response $response, array $args): Response {
         try {
             $data = $request->getQueryParams();
-            $empresaDAO = new EmpresaDAO();
+            $dao = new EmpresaDAO();
             $model = new Empresa();
             $model->setIdEmpresa($data['idEmpresa']);
-            $result = $empresaDAO->selectEmpresaPorId($model);
+            $result = $dao->selectEmpresaPorId($model);
             $response = $response->withJson($result);
             return $response;
         } catch (Exception $e) {
@@ -40,15 +40,38 @@ final class EmpresaController extends AppController {
             return $response;
         }
     }
-
-    public function selectEmpresaPorNomeOuCnpj(Request $request, Response $response, array $args): Response {
+    public function selectEmpresaTelefone(Request $request, Response $response, array $args): Response {
         try {
             $data = $request->getQueryParams();
-            $empresaDAO = new EmpresaDAO();
-            $model = new Empresa();
-            $model->setEmpresa($data['empresa']);
-            $model->setCnpj($data['cnpj']);
-            $result = $empresaDAO->selectEmpresaPorNomeOuCnpj($model);
+            $idEmpresa = $data['idEmpresa'];
+            $dao = new EmpresaDAO();
+            $result = $dao->selectEmpresaTelefone($idEmpresa);
+            $response = $response->withJson($result);
+            return $response;
+        } catch (Exception $e) {
+            $response = $response->withJson($this->getErroJson($e->getMessage()));
+            return $response;
+        }
+    }
+    public function selectEmpresaEmail(Request $request, Response $response, array $args): Response {
+        try {
+            $data = $request->getQueryParams();
+            $idEmpresa = $data['idEmpresa'];
+            $dao = new EmpresaDAO();
+            $result = $dao->selectEmpresaEmail($idEmpresa);
+            $response = $response->withJson($result);
+            return $response;
+        } catch (Exception $e) {
+            $response = $response->withJson($this->getErroJson($e->getMessage()));
+            return $response;
+        }
+    }
+    public function selectEmpresaDocumento(Request $request, Response $response, array $args): Response {
+        try {
+            $data = $request->getQueryParams();
+            $idEmpresa = $data['idEmpresa'];
+            $dao = new EmpresaDAO();
+            $result = $dao->selectEmpresaDocumento($idEmpresa);
             $response = $response->withJson($result);
             return $response;
         } catch (Exception $e) {
@@ -60,7 +83,7 @@ final class EmpresaController extends AppController {
     public function insertEmpresa(Request $request, Response $response, array $args): Response {
         try {
             $data = $request->getParsedBody();
-            $empresaDAO = new EmpresaDAO();
+            $dao = new EmpresaDAO();
             $model = new Empresa();
             $model->setEmpresa($data['empresa']);
             $model->setCnpj($data['cnpj']);
@@ -71,7 +94,7 @@ final class EmpresaController extends AppController {
             $model->setObservacao($data['observacao']);
             $model->setAtivo($data['ativo']);
             $model->setUsuarioAlteracao($data['usuarioAlteracao']);
-            $result = $empresaDAO->insertEmpresa($model);
+            $result = $dao->insertEmpresa($model);
             $response = $response->withJson([
                 'message' => $result
             ]);
@@ -84,7 +107,7 @@ final class EmpresaController extends AppController {
     public function updateEmpresa(Request $request, Response $response, array $args): Response {
         try {
             $data = $request->getParsedBody();
-            $empresaDAO = new EmpresaDAO();
+            $dao = new EmpresaDAO();
             $model = new Empresa();
             $model->setIdEmpresa($data['idEmpresa']);
             $model->setEmpresa($data['empresa']);
@@ -96,7 +119,7 @@ final class EmpresaController extends AppController {
             $model->setObservacao($data['observacao']);
             $model->setAtivo($data['ativo']);
             $model->setUsuarioAlteracao($data['usuarioAlteracao']);
-            $result = $empresaDAO->updateEmpresa($model);
+            $result = $dao->updateEmpresa($model);
             $response = $response->withJson([
                 'message' => $result
             ]);
@@ -109,10 +132,10 @@ final class EmpresaController extends AppController {
     public function deleteEmpresa(Request $request, Response $response, array $args): Response {
         try {
             $data = $request->getParsedBody();
-            $empresaDAO = new EmpresaDAO();
+            $dao = new EmpresaDAO();
             $model = new Empresa();
             $model->setIdEmpresa($data['idEmpresa']);
-            $result = $empresaDAO->deleteEmpresa($model);
+            $result = $dao->deleteEmpresa($model);
             $response = $response->withJson([
                 'message' => $result
             ]);

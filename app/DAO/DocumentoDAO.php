@@ -6,13 +6,6 @@ class DocumentoDAO extends Conexao {
     public function __construct() {
         parent::__construct();
     }
-    public function selectDocumentoPorIdEmpresa($idEmpresa) {
-        $stmt = $this->pdo->prepare("SELECT * FROM [contratos].[fn_Documento_selecionar_por_id_empresa](:id_empresa)");
-        $stmt->bindParam('id_empresa', $idEmpresa);
-        $stmt->execute();
-        $result = $stmt->fetchAll(\PDO::FETCH_ASSOC);
-        return $result;
-    }
 
     public function insertDocumento(Documento $model) {
         try {

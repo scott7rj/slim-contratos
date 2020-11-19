@@ -14,8 +14,8 @@ final class TipoPenalidadeController extends AppController {
     }
     public function selectTipoPenalidade(Request $request, Response $response, array $args): Response {
         try {
-            $tipoPenalidadeDAO = new TipoPenalidadeDAO();
-            $result = $tipoPenalidadeDAO->selectTipoPenalidade();
+            $dao = new TipoPenalidadeDAO();
+            $result = $dao->selectTipoPenalidade();
             $response = $response->withJson($result);
             return $response;
         } catch (Exception $e) {
@@ -26,11 +26,11 @@ final class TipoPenalidadeController extends AppController {
     public function insertTipoPenalidade(Request $request, Response $response, array $args): Response {
         try {
             $data = $request->getParsedBody();
-            $tipoPenalidadeDAO = new TipoPenalidadeDAO();
+            $dao = new TipoPenalidadeDAO();
             $model = new TipoPenalidade();
             $model->setTipoPenalidade($data['tipoPenalidade']);
             $model->setUsuarioAlteracao($data['usuarioAlteracao']);
-            $result = $tipoPenalidadeDAO->insertTipoPenalidade($model);
+            $result = $dao->insertTipoPenalidade($model);
             $response = $response->withJson([
                 'message' => $result
             ]);
@@ -43,13 +43,13 @@ final class TipoPenalidadeController extends AppController {
     public function updateTipoPenalidade(Request $request, Response $response, array $args): Response {
         try {
             $data = $request->getParsedBody();
-            $tipoPenalidadeDAO = new TipoPenalidadeDAO();
+            $dao = new TipoPenalidadeDAO();
             $model = new TipoPenalidade();
             $model->setIdTipoPenalidade($data['idTipoPenalidade']);
             $model->setTipoPenalidade($data['tipoPenalidade']);
             $model->setAtivo($data['ativo']);
             $model->setUsuarioAlteracao($data['usuarioAlteracao']);
-            $result = $tipoPenalidadeDAO->updateTipoPenalidade($model);
+            $result = $dao->updateTipoPenalidade($model);
             $response = $response->withJson([
                 'message' => $result
             ]);
@@ -62,10 +62,10 @@ final class TipoPenalidadeController extends AppController {
     public function deleteTipoPenalidade(Request $request, Response $response, array $args): Response {
         try {
             $data = $request->getParsedBody();
-            $tipoPenalidadeDAO = new TipoPenalidadeDAO();
+            $dao = new TipoPenalidadeDAO();
             $model = new TipoPenalidade();
             $model->setIdTipoPenalidade($data['idTipoPenalidade']);
-            $result = $tipoPenalidadeDAO->deleteTipoPenalidade($model);
+            $result = $dao->deleteTipoPenalidade($model);
             $response = $response->withJson([
                 'message' => $result
             ]);

@@ -14,8 +14,8 @@ final class UfController extends AppController {
     }
     public function selectUf(Request $request, Response $response, array $args): Response {
         try {
-            $ufDAO = new UfDAO();
-            $result = $ufDAO->selectUf();
+            $dao = new UfDAO();
+            $result = $dao->selectUf();
             $response = $response->withJson($result);
             return $response;
         } catch (Exception $e) {

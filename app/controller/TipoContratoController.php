@@ -15,10 +15,10 @@ final class TipoContratoController extends AppController {
     public function selectTipoContrato(Request $request, Response $response, array $args): Response {
         try {
             $data = $request->getQueryParams();
-            $tipoContratoDAO = new TipoContratoDAO();
+            $dao = new TipoContratoDAO();
             $model = new TipoContrato();
             $model->setAtivo($data['ativo']);
-            $result = $tipoContratoDAO->selectTipoContrato($model);
+            $result = $dao->selectTipoContrato($model);
             $response = $response->withJson($result);
             return $response;
         } catch (Exception $e) {
@@ -29,11 +29,11 @@ final class TipoContratoController extends AppController {
     public function insertTipoContrato(Request $request, Response $response, array $args): Response {
         try {
             $data = $request->getParsedBody();
-            $tipoContratoDAO = new TipoContratoDAO();
+            $dao = new TipoContratoDAO();
             $model = new TipoContrato();
             $model->setTipoContrato($data['tipoContrato']);
             $model->setUsuarioAlteracao($data['usuarioAlteracao']);
-            $result = $tipoContratoDAO->insertTipoContrato($model);
+            $result = $dao->insertTipoContrato($model);
             $response = $response->withJson([
                 'message' => $result
             ]);
@@ -46,13 +46,13 @@ final class TipoContratoController extends AppController {
     public function updateTipoContrato(Request $request, Response $response, array $args): Response {
         try {
             $data = $request->getParsedBody();
-            $tipoContratoDAO = new TipoContratoDAO();
+            $dao = new TipoContratoDAO();
             $model = new TipoContrato();
             $model->setIdTipoContrato($data['idTipoContrato']);
             $model->setTipoContrato($data['tipoContrato']);
             $model->setAtivo($data['ativo']);
             $model->setUsuarioAlteracao($data['usuarioAlteracao']);
-            $result = $tipoContratoDAO->updateTipoContrato($model);
+            $result = $dao->updateTipoContrato($model);
             $response = $response->withJson([
                 'message' => $result
             ]);
@@ -65,10 +65,10 @@ final class TipoContratoController extends AppController {
     public function deleteTipoContrato(Request $request, Response $response, array $args): Response {
         try {
             $data = $request->getParsedBody();
-            $tipoContratoDAO = new TipoContratoDAO();
+            $dao = new TipoContratoDAO();
             $model = new TipoContrato();
             $model->setIdTipoContrato($data['idTipoContrato']);
-            $result = $tipoContratoDAO->deleteTipoContrato($model);
+            $result = $dao->deleteTipoContrato($model);
             $response = $response->withJson([
                 'message' => $result
             ]);

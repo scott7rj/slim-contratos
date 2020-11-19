@@ -4,23 +4,23 @@ use app\model\AppModel;
 
 final class Contrato extends AppModel {
     private $idContrato;
-    private $contrato;
     private $idEmpresa;
-    private $empresa;
-    private $dataInicio;
-    private $dataFim;
     private $idTipoContrato;
-    private $tipoContrato;
-    private $valorGlobalInicial;
-    private $objetoContratual;
-    private $compromissoSiplo;
+    private $contrato;
     private $numeroProcesso;
+    private $numeroOrdemServico;
+    private $dataAssinatura;
+    private $dataInicioVigencia;
+    private $dataFimVigencia;
+    private $valorGlobalInicial;
+    private $valorGlobalAtualizado;
+    private $objetoContratual;
     private $diaPagamento;
-    private $qtdDiasAlertarPagamento;
-    private $prazoRecebimentoNotaFiscal;
-    private $diaAteste;
-    private $qtdDiasAlertarAteste;
-    private $ordemServico;
+    private $diaPagamentoCorridos;
+    private $prazoAlertaDiasPagamento;
+    private $prazoAlertaDiasAteste;
+    private $prazoAlertaDiasNotaFiscal;
+    private $prazoAlertaMesesFimVigencia;
 
     public function __construct() {
         parent::__construct();
@@ -49,26 +49,6 @@ final class Contrato extends AppModel {
     /**
      * @return mixed
      */
-    public function getContrato()
-    {
-        return $this->contrato;
-    }
-
-    /**
-     * @param mixed $contrato
-     *
-     * @return self
-     */
-    public function setContrato($contrato)
-    {
-        $this->contrato = $contrato;
-
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
     public function getIdEmpresa()
     {
         return $this->idEmpresa;
@@ -82,66 +62,6 @@ final class Contrato extends AppModel {
     public function setIdEmpresa($idEmpresa)
     {
         $this->idEmpresa = $idEmpresa;
-
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getEmpresa()
-    {
-        return $this->empresa;
-    }
-
-    /**
-     * @param mixed $empresa
-     *
-     * @return self
-     */
-    public function setEmpresa($empresa)
-    {
-        $this->empresa = $empresa;
-
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getDataInicio()
-    {
-        return $this->dataInicio;
-    }
-
-    /**
-     * @param mixed $dataInicio
-     *
-     * @return self
-     */
-    public function setDataInicio($dataInicio)
-    {
-        $this->dataInicio = $dataInicio;
-
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getDataFim()
-    {
-        return $this->dataFim;
-    }
-
-    /**
-     * @param mixed $dataFim
-     *
-     * @return self
-     */
-    public function setDataFim($dataFim)
-    {
-        $this->dataFim = $dataFim;
 
         return $this;
     }
@@ -169,79 +89,19 @@ final class Contrato extends AppModel {
     /**
      * @return mixed
      */
-    public function getTipoContrato()
+    public function getContrato()
     {
-        return $this->tipoContrato;
+        return $this->contrato;
     }
 
     /**
-     * @param mixed $tipoContrato
+     * @param mixed $contrato
      *
      * @return self
      */
-    public function setTipoContrato($tipoContrato)
+    public function setContrato($contrato)
     {
-        $this->tipoContrato = $tipoContrato;
-
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getValorGlobalInicial()
-    {
-        return $this->valorGlobalInicial;
-    }
-
-    /**
-     * @param mixed $valorGlobalIncial
-     *
-     * @return self
-     */
-    public function setValorGlobalInicial($valorGlobalInicial)
-    {
-        $this->valorGlobalInicial = $valorGlobalInicial;
-
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getObjetoContratual()
-    {
-        return $this->objetoContratual;
-    }
-
-    /**
-     * @param mixed $objetoContratual
-     *
-     * @return self
-     */
-    public function setObjetoContratual($objetoContratual)
-    {
-        $this->objetoContratual = $objetoContratual;
-
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getCompromissoSiplo()
-    {
-        return $this->compromissoSiplo;
-    }
-
-    /**
-     * @param mixed $compromissoSiplo
-     *
-     * @return self
-     */
-    public function setCompromissoSiplo($compromissoSiplo)
-    {
-        $this->compromissoSiplo = $compromissoSiplo;
+        $this->contrato = $contrato;
 
         return $this;
     }
@@ -269,6 +129,146 @@ final class Contrato extends AppModel {
     /**
      * @return mixed
      */
+    public function getNumeroOrdemServico()
+    {
+        return $this->numeroOrdemServico;
+    }
+
+    /**
+     * @param mixed $numeroOrdemServico
+     *
+     * @return self
+     */
+    public function setNumeroOrdemServico($numeroOrdemServico)
+    {
+        $this->numeroOrdemServico = $numeroOrdemServico;
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDataAssinatura()
+    {
+        return $this->dataAssinatura;
+    }
+
+    /**
+     * @param mixed $dataAssinatura
+     *
+     * @return self
+     */
+    public function setDataAssinatura($dataAssinatura)
+    {
+        $this->dataAssinatura = $dataAssinatura;
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDataInicioVigencia()
+    {
+        return $this->dataInicioVigencia;
+    }
+
+    /**
+     * @param mixed $dataInicioVigencia
+     *
+     * @return self
+     */
+    public function setDataInicioVigencia($dataInicioVigencia)
+    {
+        $this->dataInicioVigencia = $dataInicioVigencia;
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDataFimVigencia()
+    {
+        return $this->dataFimVigencia;
+    }
+
+    /**
+     * @param mixed $dataFimVigencia
+     *
+     * @return self
+     */
+    public function setDataFimVigencia($dataFimVigencia)
+    {
+        $this->dataFimVigencia = $dataFimVigencia;
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getValorGlobalInicial()
+    {
+        return $this->valorGlobalInicial;
+    }
+
+    /**
+     * @param mixed $valorGlobalInicial
+     *
+     * @return self
+     */
+    public function setValorGlobalInicial($valorGlobalInicial)
+    {
+        $this->valorGlobalInicial = $valorGlobalInicial;
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getValorGlobalAtualizado()
+    {
+        return $this->valorGlobalAtualizado;
+    }
+
+    /**
+     * @param mixed $valorGlobalAtualizado
+     *
+     * @return self
+     */
+    public function setValorGlobalAtualizado($valorGlobalAtualizado)
+    {
+        $this->valorGlobalAtualizado = $valorGlobalAtualizado;
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getObjetoContratual()
+    {
+        return $this->objetoContratual;
+    }
+
+    /**
+     * @param mixed $objetoContratual
+     *
+     * @return self
+     */
+    public function setObjetoContratual($objetoContratual)
+    {
+        $this->objetoContratual = $objetoContratual;
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
     public function getDiaPagamento()
     {
         return $this->diaPagamento;
@@ -289,19 +289,19 @@ final class Contrato extends AppModel {
     /**
      * @return mixed
      */
-    public function getQtdDiasAlertarPagamento()
+    public function getDiaPagamentoCorridos()
     {
-        return $this->qtdDiasAlertarPagamento;
+        return $this->diaPagamentoCorridos;
     }
 
     /**
-     * @param mixed $qtdDiasAlertarPagamento
+     * @param mixed $diaPagamentoCorridos
      *
      * @return self
      */
-    public function setQtdDiasAlertarPagamento($qtdDiasAlertarPagamento)
+    public function setDiaPagamentoCorridos($diaPagamentoCorridos)
     {
-        $this->qtdDiasAlertarPagamento = $qtdDiasAlertarPagamento;
+        $this->diaPagamentoCorridos = $diaPagamentoCorridos;
 
         return $this;
     }
@@ -309,19 +309,19 @@ final class Contrato extends AppModel {
     /**
      * @return mixed
      */
-    public function getPrazoRecebimentoNotaFiscal()
+    public function getPrazoAlertaDiasPagamento()
     {
-        return $this->prazoRecebimentoNotaFiscal;
+        return $this->prazoAlertaDiasPagamento;
     }
 
     /**
-     * @param mixed $prazoRecebimentoNotaFiscal
+     * @param mixed $prazoAlertaDiasPagamento
      *
      * @return self
      */
-    public function setPrazoRecebimentoNotaFiscal($prazoRecebimentoNotaFiscal)
+    public function setPrazoAlertaDiasPagamento($prazoAlertaDiasPagamento)
     {
-        $this->prazoRecebimentoNotaFiscal = $prazoRecebimentoNotaFiscal;
+        $this->prazoAlertaDiasPagamento = $prazoAlertaDiasPagamento;
 
         return $this;
     }
@@ -329,19 +329,19 @@ final class Contrato extends AppModel {
     /**
      * @return mixed
      */
-    public function getDiaAteste()
+    public function getPrazoAlertaDiasAteste()
     {
-        return $this->diaAteste;
+        return $this->prazoAlertaDiasAteste;
     }
 
     /**
-     * @param mixed $diaAteste
+     * @param mixed $prazoAlertaDiasAteste
      *
      * @return self
      */
-    public function setDiaAteste($diaAteste)
+    public function setPrazoAlertaDiasAteste($prazoAlertaDiasAteste)
     {
-        $this->diaAteste = $diaAteste;
+        $this->prazoAlertaDiasAteste = $prazoAlertaDiasAteste;
 
         return $this;
     }
@@ -349,19 +349,19 @@ final class Contrato extends AppModel {
     /**
      * @return mixed
      */
-    public function getQtdDiasAlertarAteste()
+    public function getPrazoAlertaDiasNotaFiscal()
     {
-        return $this->qtdDiasAlertarAteste;
+        return $this->prazoAlertaDiasNotaFiscal;
     }
 
     /**
-     * @param mixed $qtdDiasAlertarAteste
+     * @param mixed $prazoAlertaDiasNotaFiscal
      *
      * @return self
      */
-    public function setQtdDiasAlertarAteste($qtdDiasAlertarAteste)
+    public function setPrazoAlertaDiasNotaFiscal($prazoAlertaDiasNotaFiscal)
     {
-        $this->qtdDiasAlertarAteste = $qtdDiasAlertarAteste;
+        $this->prazoAlertaDiasNotaFiscal = $prazoAlertaDiasNotaFiscal;
 
         return $this;
     }
@@ -369,19 +369,19 @@ final class Contrato extends AppModel {
     /**
      * @return mixed
      */
-    public function getOrdemServico()
+    public function getPrazoAlertaMesesFimVigencia()
     {
-        return $this->ordemServico;
+        return $this->prazoAlertaMesesFimVigencia;
     }
 
     /**
-     * @param mixed $ordemServico
+     * @param mixed $prazoAlertaMesesFimVigencia
      *
      * @return self
      */
-    public function setOrdemServico($ordemServico)
+    public function setPrazoAlertaMesesFimVigencia($prazoAlertaMesesFimVigencia)
     {
-        $this->ordemServico = $ordemServico;
+        $this->prazoAlertaMesesFimVigencia = $prazoAlertaMesesFimVigencia;
 
         return $this;
     }

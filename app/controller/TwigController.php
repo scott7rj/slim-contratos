@@ -13,6 +13,6 @@ final class TwigController extends AppController {
         parent::__construct();
     }
     public function twig(Request $request, Response $response, array $args): Response {
-        return $this->view->render($response, 'twig.html');
+        return $this->view->render($response, 'twig.twig');
     }
 }

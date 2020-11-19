@@ -12,28 +12,16 @@ final class DocumentoController extends AppController {
     public function __construct() {
         parent::__construct();
     }
-    public function selectDocumentoPorIdEmpresa(Request $request, Response $response, array $args): Response {
-        try {
-            $data = $request->getQueryParams();
-            $idEmpresa = $data['idEmpresa'];
-            $documentoDAO = new DocumentoDAO();
-            $result = $documentoDAO->selectDocumentoPorIdEmpresa($idEmpresa);
-            $response = $response->withJson($result);
-            return $response;
-        } catch (Exception $e) {
-            $response = $response->withJson($this->getErroJson($e->getMessage()));
-            return $response;
-        }
-    }
+
     public function insertDocumento(Request $request, Response $response, array $args): Response {
         try {
             $data = $request->getParsedBody();
-            $documentoDAO = new DocumentoDAO();
+            $dao = new DocumentoDAO();
             $model = new Documento();
             $model->setIdTipoDocumento($data['idTipoDocumento']);
             $model->setNomeDocumento($data['nomeDocumento']);
             $model->setUsuarioAlteracao($data['usuarioAlteracao']);
-            $result = $documentoDAO->insertDocumento($model);
+            $result = $dao->insertDocumento($model);
             $response = $response->withJson([
                 'message' => $result
             ]);
@@ -46,14 +34,14 @@ final class DocumentoController extends AppController {
     public function updateDocumento(Request $request, Response $response, array $args): Response {
         try {
             $data = $request->getParsedBody();
-            $documentoDAO = new DocumentoDAO();
+            $dao = new DocumentoDAO();
             $model = new Documento();
             $model->setIdDocumento($data['idDocumento']);
             $model->setIdTipoDocumento($data['idTipoDocumento']);
             $model->setIdEmpresa($data['idEmpresa']);
             $model->setNomeDocumento($data['nomeDocumento']);
             $model->setUsuarioAlteracao($data['usuarioAlteracao']);
-            $result = $documentoDAO->updateDocumento($model);
+            $result = $dao->updateDocumento($model);
             $response = $response->withJson([
                 'message' => $result
             ]);
@@ -66,10 +54,10 @@ final class DocumentoController extends AppController {
     public function deleteDocumento(Request $request, Response $response, array $args): Response {
         try {
             $data = $request->getParsedBody();
-            $documentoDAO = new DocumentoDAO();
+            $dao = new DocumentoDAO();
             $model = new Documento();
             $model->setIdDocumento($data['idDocumento']);
-            $result = $documentoDAO->deleteDocumento($model);
+            $result = $dao->deleteDocumento($model);
             $response = $response->withJson([
                 'message' => $result
             ]);

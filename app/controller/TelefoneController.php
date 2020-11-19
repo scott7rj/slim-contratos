@@ -12,29 +12,16 @@ final class TelefoneController extends AppController {
     public function __construct() {
         parent::__construct();
     }
-    public function selectTelefonePorIdEmpresa(Request $request, Response $response, array $args): Response {
-        try {
-            $data = $request->getQueryParams();
-            $idEmpresa = $data['idEmpresa'];
-            $telefoneDAO = new TelefoneDAO();
-            $result = $telefoneDAO->selectTelefonePorIdEmpresa($idEmpresa);
-            $response = $response->withJson($result);
-            return $response;
-        } catch (Exception $e) {
-            $response = $response->withJson($this->getErroJson($e->getMessage()));
-            return $response;
-        }
-    }
     public function insertTelefone(Request $request, Response $response, array $args): Response {
         try {
             $data = $request->getParsedBody();
-            $telefoneDAO = new TelefoneDAO();
+            $dao = new TelefoneDAO();
             $model = new Telefone();
             $model->setIdEmpresa($data['idEmpresa']);
             $model->setIdTipoContato($data['idTipoContato']);
             $model->setTelefone($data['telefone']);
             $model->setUsuarioAlteracao($data['usuarioAlteracao']);
-            $result = $telefoneDAO->insertTelefone($model);
+            $result = $dao->insertTelefone($model);
             $response = $response->withJson([
                 'message' => $result
             ]);
@@ -47,14 +34,14 @@ final class TelefoneController extends AppController {
     public function updateTelefone(Request $request, Response $response, array $args): Response {
         try {
             $data = $request->getParsedBody();
-            $telefoneDAO = new TelefoneDAO();
+            $dao = new TelefoneDAO();
             $model = new Telefone();
             $model->setIdTelefone($data['idTelefone']);
             $model->setIdEmpresa($data['idEmpresa']);
             $model->setIdTipoContato($data['idTipoContato']);
             $model->setTelefone($data['telefone']);
             $model->setUsuarioAlteracao($data['usuarioAlteracao']);
-            $result = $telefoneDAO->updateTelefone($model);
+            $result = $dao->updateTelefone($model);
             $response = $response->withJson([
                 'message' => $result
             ]);
@@ -67,10 +54,10 @@ final class TelefoneController extends AppController {
     public function deleteTelefone(Request $request, Response $response, array $args): Response {
         try {
             $data = $request->getParsedBody();
-            $telefoneDAO = new TelefoneDAO();
+            $dao = new TelefoneDAO();
             $model = new Telefone();
             $model->setIdTelefone($data['idTelefone']);
-            $result = $telefoneDAO->deleteTelefone($model);
+            $result = $dao->deleteTelefone($model);
             $response = $response->withJson([
                 'message' => $result
             ]);

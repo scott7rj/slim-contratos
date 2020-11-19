@@ -5,6 +5,8 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Message\ResponseInterface as Response;
 use app\dao\ContratoDAO;
 use app\model\Contrato;
+use app\model\CompromissoSiplo;
+use app\model\ContratoTipoPenalidade;
 use app\controller\AppController;
 use Exception;
 
@@ -18,8 +20,34 @@ final class ContratoController extends AppController {
         try {
             $data = $request->getQueryParams();
             $idEmpresa = $data['idEmpresa'];
-            $contratoDAO = new ContratoDAO();
-            $result = $contratoDAO->selectContratoPorIdEmpresa($idEmpresa);
+            $dao = new ContratoDAO();
+            $result = $dao->selectContratoPorIdEmpresa($idEmpresa);
+            $response = $response->withJson($result);
+            return $response;
+        } catch (Exception $e) {
+            $response = $response->withJson($this->getErroJson($e->getMessage()));
+            return $response;
+        }
+    }
+    public function selectContratoCompromissoSiplo(Request $request, Response $response, array $args): Response {
+        try {
+            $data = $request->getQueryParams();
+            $idContrato = $data['idContrato'];
+            $dao = new ContratoDAO();
+            $result = $dao->selectContratoCompromissoSiplo($idContrato);
+            $response = $response->withJson($result);
+            return $response;
+        } catch (Exception $e) {
+            $response = $response->withJson($this->getErroJson($e->getMessage()));
+            return $response;
+        }
+    }
+    public function selectContratoTipoPenalidade(Request $request, Response $response, array $args): Response {
+        try {
+            $data = $request->getQueryParams();
+            $idContrato = $data['idContrato'];
+            $dao = new ContratoDAO();
+            $result = $dao->selectContratoTipoPenalidade($idContrato);
             $response = $response->withJson($result);
             return $response;
         } catch (Exception $e) {
@@ -30,25 +58,62 @@ final class ContratoController extends AppController {
     public function insertContrato(Request $request, Response $response, array $args): Response {
         try {
             $data = $request->getParsedBody();
-            $contratoDAO = new ContratoDAO();
+            $dao = new ContratoDAO();
             $model = new Contrato();
-            $model->setContrato($data['contrato']);
             $model->setIdEmpresa($data['idEmpresa']);
-            $model->setDataInicio($data['dataInicio']);
-            $model->setDataFim($data['dataFim']);
             $model->setIdTipoContrato($data['idTipoContrato']);
-            $model->setValorGlobalInicial($data['valorGlobalInicial']);
-            $model->setObjetoContratual($data['objetoContratual']);
-            $model->setCompromissoSiplo($data['compromissoSiplo']);
+            $model->setContrato($data['contrato']);
             $model->setNumeroProcesso($data['numeroProcesso']);
+            $model->setNumeroOrdemServico($data['numeroOrdemServico']);
+            $model->setDataAssinatura(trim($data['dataAssinatura']));
+            $model->setDataInicioVigencia(trim($data['dataInicioVigencia']));
+            $model->setDataFimVigencia(trim($data['dataFimVigencia']));
+            $model->setValorGlobalInicial($data['valorGlobalInicial']);
+            $model->setValorGlobalAtualizado($data['valorGlobalAtualizado']);
+            $model->setObjetoContratual($data['objetoContratual']);
             $model->setDiaPagamento($data['diaPagamento']);
-            $model->setQtdDiasAlertarPagamento($data['qtdDiasAlertarPagamento']);
-            $model->setPrazoRecebimentoNotaFiscal($data['prazoRecebimentoNotaFiscal']);
-            $model->setDiaAteste($data['diaAteste']);
-            $model->setQtdDiasAlertarAteste($data['qtdDiasAlertarAteste']);
-            $model->setOrdemServico($data['ordemServico']);
+            $model->setDiaPagamentoCorridos($data['diaPagamentoCorridos']);
+            $model->setPrazoAlertaDiasPagamento($data['prazoAlertaDiasPagamento']);
+            $model->setPrazoAlertaDiasAteste($data['prazoAlertaDiasAteste']);
+            $model->setPrazoAlertaDiasNotaFiscal($data['prazoAlertaDiasNotaFiscal']);
+            $model->setPrazoAlertaMesesFimVigencia($data['prazoAlertaMesesFimVigencia']);
             $model->setUsuarioAlteracao($data['usuarioAlteracao']);
-            $result = $contratoDAO->insertContrato($model);
+            $result = $dao->insertContrato($model);
+            $response = $response->withJson([
+                'message' => $result
+            ]);
+            return $response;
+        } catch (Exception $e) {
+            $response = $response->withJson($this->getErroJson($e->getMessage()));
+            return $response;
+        }
+    }
+    public function insertContratoCompromissoSiplo(Request $request, Response $response, array $args): Response {
+        try {
+            $data = $request->getParsedBody();
+            $dao = new ContratoDAO();
+            $model = new CompromissoSiplo();
+            $model->setCompromissoSiplo($data['compromissoSiplo']);
+            $model->setIdContrato($data['idContrato']);
+            $model->setUsuarioAlteracao($data['usuarioAlteracao']);
+            $result = $dao->insertContratoCompromissoSiplo($model);
+            $response = $response->withJson([
+                'message' => $result
+            ]);
+            return $response;
+        } catch (Exception $e) {
+            $response = $response->withJson($this->getErroJson($e->getMessage()));
+            return $response;
+        }
+    }
+    public function insertContratoTipoPenalidade(Request $request, Response $response, array $args): Response {
+        try {
+            $data = $request->getParsedBody();
+            $dao = new ContratoDAO();
+            $model = new ContratoTipoPenalidade();
+            $model->setIdContrato($data['idContrato']);
+            $model->setIdTipoPenalidade($data['idTipoPenalidade']);
+            $result = $dao->insertContratoTipoPenalidade($model);
             $response = $response->withJson([
                 'message' => $result
             ]);
@@ -61,27 +126,28 @@ final class ContratoController extends AppController {
     public function updateContrato(Request $request, Response $response, array $args): Response {
         try {
             $data = $request->getParsedBody();
-            $contratoDAO = new ContratoDAO();
+            $dao = new ContratoDAO();
             $model = new Contrato();
             $model->setIdContrato($data['idContrato']);
-            $model->setContrato($data['contrato']);
             $model->setIdEmpresa($data['idEmpresa']);
-            $model->setDataInicio($data['dataInicio']);
-            $model->setDataFim($data['dataFim']);
             $model->setIdTipoContrato($data['idTipoContrato']);
-            $model->setValorGlobalInicial($data['valorGlobalInicial']);
-            $model->setObjetoContratual($data['objetoContratual']);
-            $model->setCompromissoSiplo($data['compromissoSiplo']);
+            $model->setContrato($data['contrato']);
             $model->setNumeroProcesso($data['numeroProcesso']);
+            $model->setNumeroOrdemServico($data['numeroOrdemServico']);
+            $model->setDataAssinatura(trim($data['dataAssinatura']));
+            $model->setDataInicioVigencia(trim($data['dataInicioVigencia']));
+            $model->setDataFimVigencia(trim($data['dataFimVigencia']));
+            $model->setValorGlobalInicial($data['valorGlobalInicial']);
+            $model->setValorGlobalAtualizado($data['valorGlobalAtualizado']);
+            $model->setObjetoContratual($data['objetoContratual']);
             $model->setDiaPagamento($data['diaPagamento']);
-            $model->setQtdDiasAlertarPagamento($data['qtdDiasAlertarPagamento']);
-            $model->setPrazoRecebimentoNotaFiscal($data['prazoRecebimentoNotaFiscal']);
-            $model->setDiaAteste($data['diaAteste']);
-            $model->setQtdDiasAlertarAteste($data['qtdDiasAlertarAteste']);
-            $model->setOrdemServico($data['ordemServico']);
+            $model->setDiaPagamentoCorridos($data['diaPagamentoCorridos']);
+            $model->setPrazoAlertaDiasPagamento($data['prazoAlertaDiasPagamento']);
+            $model->setPrazoAlertaDiasAteste($data['prazoAlertaDiasAteste']);
+            $model->setPrazoAlertaDiasNotaFiscal($data['prazoAlertaDiasNotaFiscal']);
+            $model->setPrazoAlertaMesesFimVigencia($data['prazoAlertaMesesFimVigencia']);
             $model->setUsuarioAlteracao($data['usuarioAlteracao']);
-            $result = $contratoDAO->insertContrato($model);
-            $result = $contratoDAO->updateContrato($model);
+            $result = $dao->updateContrato($model);
             $response = $response->withJson([
                 'message' => $result
             ]);
@@ -94,10 +160,10 @@ final class ContratoController extends AppController {
     public function deleteContrato(Request $request, Response $response, array $args): Response {
         try {
             $data = $request->getParsedBody();
-            $contratoDAO = new ContratoDAO();
+            $dao = new ContratoDAO();
             $model = new Contrato();
             $model->setIdContrato($data['idContrato']);
-            $result = $contratoDAO->deleteContrato($model);
+            $result = $dao->deleteContrato($model);
             $response = $response->withJson([
                 'message' => $result
             ]);
@@ -106,5 +172,23 @@ final class ContratoController extends AppController {
             $response = $response->withJson($this->getErroJson($e->getMessage()));
             return $response;
         }
+    }
+
+    public function deleteContratoTipoPenalidade(Request $request, Response $response, array $args): Response {
+        try {
+            $data = $request->getParsedBody();
+            $dao = new ContratoDAO();
+            $model = new ContratoTipoPenalidade();
+            $model->setIdContrato($data['idContrato']);
+            $model->setIdTipoPenalidade($data['idTipoPenalidade']);
+            $result = $dao->deleteContratoTipoPenalidade($model);
+            $response = $response->withJson([
+                'message' => $result
+            ]);
+            return $response;
+        } catch (Exception $e) {
+            $response = $response->withJson($this->getErroJson($e->getMessage()));
+            return $response;
+        }   
     }
 }

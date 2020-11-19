@@ -11,9 +11,12 @@ use app\controller\EmpresaController;
 use app\controller\TipoContratoController;
 use app\controller\ContratoController;
 use app\controller\TipoPenalidadeController;
+use app\controller\CompromissoSiploController;
 
 use app\controller\TwigController;
-$app->get('/twig', TwigController::class . ':twig');
+$app->get('/twig', function($request, $response){
+	return $this->view->render($response, 'twig.twig');
+});
 
 $app->get('/', InitController::class . ':init');
 //==========
@@ -33,17 +36,17 @@ $app->delete('/tipoPenalidade', TipoPenalidadeController::class . ':deleteTipoPe
 //==========
 $app->get('/empresa', EmpresaController::class . ':selectEmpresa');
 $app->get('/empresaPorId', EmpresaController::class . ':selectEmpresaPorId');
-$app->get('/empresaPorNomeOuCnpj', EmpresaController::class . ':selectEmpresaPorNomeOuCnpj');
+$app->get('/empresaTelefone', EmpresaController::class . ':selectEmpresaTelefone');
+$app->get('/empresaEmail', EmpresaController::class . ':selectEmpresaEmail');
+$app->get('/empresaDocumento', EmpresaController::class . ':selectEmpresaDocumento');
 $app->post('/empresa', EmpresaController::class . ':insertEmpresa');
 $app->put('/empresa', EmpresaController::class . ':updateEmpresa');
 $app->delete('/empresa', EmpresaController::class . ':deleteEmpresa');
 //==========
-$app->get('/telefonePorIdEmpresa', TelefoneController::class . ':selectTelefonePorIdEmpresa');
 $app->post('/telefone', TelefoneController::class . ':insertTelefone');
 $app->put('/telefone', TelefoneController::class . ':updateTelefone');
 $app->delete('/telefone', TelefoneController::class . ':deleteTelefone');
 //==========
-$app->get('/emailPorIdEmpresa', EmailController::class . ':selectEmailPorIdEmpresa');
 $app->post('/email', EmailController::class . ':insertEmail');
 $app->put('/email', EmailController::class . ':updateEmail');
 $app->delete('/email', EmailController::class . ':deleteEmail');
@@ -53,7 +56,6 @@ $app->post('/dominioDocumento', DominioDocumentoController::class . ':insertDomi
 $app->put('/dominioDocumento', DominioDocumentoController::class . ':updateDominioDocumento');
 $app->delete('/dominioDocumento', DominioDocumentoController::class . ':deleteDominioDocumento');
 //==========
-$app->get('/documento', DocumentoController::class . ':selectDocumentoPorIdEmpresa');
 $app->post('/documento', DocumentoController::class . ':insertDocumento');
 $app->put('/documento', DocumentoController::class . ':updateDocumento');
 $app->delete('/documento', DocumentoController::class . ':deleteDocumento');
@@ -65,9 +67,22 @@ $app->put('/tipoContrato', TipoContratoController::class . ':updateTipoContrato'
 $app->delete('/tipoContrato', TipoContratoController::class . ':deleteTipoContrato');
 //==========
 $app->get('/contratoPorIdEmpresa', ContratoController::class . ':selectContratoPorIdEmpresa');
+$app->get('/contratoCompromissoSiplo', ContratoController::class . ':selectContratoCompromissoSiplo');
+$app->get('/contratoTipoPenalidade', ContratoController::class . ':selectContratoTipoPenalidade');
+
 $app->post('/contrato', ContratoController::class . ':insertContrato');
 $app->put('/contrato', ContratoController::class . ':updateContrato');
 $app->delete('/contrato', ContratoController::class . ':deleteContrato');
-//==========
 
+$app->post('/contratoTipoPenalidade', ContratoController::class . ':insertContratoTipoPenalidade');
+$app->delete('/contratoTipoPenalidade', ContratoController::class . ':deleteContratoTipoPenalidade');
+
+$app->post('/contratoCompromissoSiplo', ContratoController::class . ':insertContratoCompromissoSiplo');
+$app->delete('/contratoCompromissoSiplo', ContratoController::class . ':deleteContratoCompromissoSiplo');
+
+//==========
+$app->post('/compromissoSiplo', CompromissoSiploController::class . ':insertCompromissoSiplo');
+$app->put('/compromissoSiplo', CompromissoSiploController::class . ':updateCompromissoSiplo');
+$app->delete('/compromissoSiplo', CompromissoSiploController::class . ':deleteCompromissoSiplo');
+//==========
 
