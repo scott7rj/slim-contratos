@@ -1,0 +1,32 @@
+#divcontainer {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	float: left;
+	border: 1px solid black;
+	text-align: left;
+	background-color: transparent;
+}
+#divheader {
+	margin: 0.1rem;
+	padding: 0;
+	width: 100%;
+	float: left;
+	border: 1px solid blue;
+}
+#divmenu {
+	margin: 0.1rem;
+	padding: 0;
+	float: left;
+	height: 2.2rem;
+	border: 1px solid red;
+}
+#divlogin {
+	margin: 0.1rem;
+	padding: 0;
+	width: 26rem;
+	float: right;
+	height: 2.0rem;
+	border: 1px solid red;
+	text-align: left;
+}

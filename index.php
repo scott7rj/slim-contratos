@@ -16,5 +16,6 @@ $container['view'] = function($container) {
 	return $view;
 };
 
-require_once "./routes/routes.php";
+require_once "./routes/routesRest.php";
+require_once "./routes/routesWeb.php";
 $app->run();

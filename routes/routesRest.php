@@ -13,11 +13,6 @@ use app\controller\ContratoController;
 use app\controller\TipoPenalidadeController;
 use app\controller\CompromissoSiploController;
 
-use app\controller\TwigController;
-$app->get('/twig', function($request, $response){
-	return $this->view->render($response, 'twig.twig');
-});
-
 $app->get('/', InitController::class . ':init');
 //==========
 $app->post('/login', LoginController::class . ':autenticar');

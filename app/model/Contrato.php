@@ -6,7 +6,6 @@ final class Contrato extends AppModel {
     private $idContrato;
     private $idEmpresa;
     private $idTipoContrato;
-    private $contrato;
     private $numeroProcesso;
     private $numeroOrdemServico;
     private $dataAssinatura;
@@ -82,26 +81,6 @@ final class Contrato extends AppModel {
     public function setIdTipoContrato($idTipoContrato)
     {
         $this->idTipoContrato = $idTipoContrato;
-
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getContrato()
-    {
-        return $this->contrato;
-    }
-
-    /**
-     * @param mixed $contrato
-     *
-     * @return self
-     */
-    public function setContrato($contrato)
-    {
-        $this->contrato = $contrato;
 
         return $this;
     }

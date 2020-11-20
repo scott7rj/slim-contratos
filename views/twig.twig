@@ -1,5 +1,10 @@
 {% extends 'layout/app.twig' %}
-
-{% block content %}
+{% block contentfirst %}
 	<h1>Hello Twig!!!</h1>
+	<a href="#">link</a>
+{% endblock %}
+{% block scripts %}
+<script>
+	console.log('twig.twig');
+</script>
 {% endblock %}

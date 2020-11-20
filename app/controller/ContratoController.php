@@ -46,8 +46,12 @@ final class ContratoController extends AppController {
         try {
             $data = $request->getQueryParams();
             $idContrato = $data['idContrato'];
+            $ativo = $data['ativo'];
             $dao = new ContratoDAO();
-            $result = $dao->selectContratoTipoPenalidade($idContrato);
+            $model = new Contrato();
+            $model->setIdContrato($idContrato);
+            $model->setAtivo($ativo);
+            $result = $dao->selectContratoTipoPenalidade($model);
             $response = $response->withJson($result);
             return $response;
         } catch (Exception $e) {
@@ -62,7 +66,6 @@ final class ContratoController extends AppController {
             $model = new Contrato();
             $model->setIdEmpresa($data['idEmpresa']);
             $model->setIdTipoContrato($data['idTipoContrato']);
-            $model->setContrato($data['contrato']);
             $model->setNumeroProcesso($data['numeroProcesso']);
             $model->setNumeroOrdemServico($data['numeroOrdemServico']);
             $model->setDataAssinatura(trim($data['dataAssinatura']));
@@ -129,9 +132,6 @@ final class ContratoController extends AppController {
             $dao = new ContratoDAO();
             $model = new Contrato();
             $model->setIdContrato($data['idContrato']);
-            $model->setIdEmpresa($data['idEmpresa']);
-            $model->setIdTipoContrato($data['idTipoContrato']);
-            $model->setContrato($data['contrato']);
             $model->setNumeroProcesso($data['numeroProcesso']);
             $model->setNumeroOrdemServico($data['numeroOrdemServico']);
             $model->setDataAssinatura(trim($data['dataAssinatura']));

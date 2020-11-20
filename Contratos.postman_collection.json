@@ -6,6 +6,545 @@
 	},
 	"item": [
 		{
+			"name": "Empresa",
+			"item": [
+				{
+					"name": "selectEmpresa",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://{{HOST}}/slim/empresa",
+							"protocol": "http",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"slim",
+								"empresa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "selectEmpresaPorId",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://{{HOST}}/slim/empresaPorId?idEmpresa=32",
+							"protocol": "http",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"slim",
+								"empresaPorId"
+							],
+							"query": [
+								{
+									"key": "idEmpresa",
+									"value": "32"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "insertEmpresa",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"empresa\": \"Empresa ÉÊÈÊË\",\r\n    \"cnpj\": \"78792772000109\",\r\n    \"endereco\": \"ÉÊÈÊË\",\r\n    \"cidade\": \"ÉÊÈÊË\",\r\n    \"uf\": \"DF\",\r\n    \"cep\": \"12345678\",\r\n    \"observacao\": \"ÉÊÈÊË\",\r\n    \"ativo\": \"1\",\r\n    \"usuarioAlteracao\":\"c110611\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{HOST}}/slim/empresa",
+							"protocol": "http",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"slim",
+								"empresa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateEmpresa",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idEmpresa\": \"33\",\r\n    \"empresa\": \"Empresa ÉÊÈÊËÍÌÎÏ\",\r\n    \"cnpj\": \"78792772000109\",\r\n    \"endereco\": \"ÉÊÈÊËÍÌÎÏ\",\r\n    \"cidade\": \"ÉÊÈÊËÍÌÎÏ\",\r\n    \"uf\": \"DF\",\r\n    \"cep\": \"12345678\",\r\n    \"observacao\": \"ÉÊÈÊËÍÌÎÏ\",\r\n    \"ativo\": \"1\",\r\n    \"usuarioAlteracao\":\"c110611\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{HOST}}/slim/empresa",
+							"protocol": "http",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"slim",
+								"empresa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteEmpresa",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idEmpresa\": \"33\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{HOST}}/slim/empresa",
+							"protocol": "http",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"slim",
+								"empresa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "selectEmpresaDocumento",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{HOST}}/slim/empresaDocumento?idEmpresa=32",
+							"protocol": "http",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"slim",
+								"empresaDocumento"
+							],
+							"query": [
+								{
+									"key": "idEmpresa",
+									"value": "32"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "selectEmpresaEmail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{HOST}}/slim/empresaEmail?idEmpresa=32",
+							"protocol": "http",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"slim",
+								"empresaEmail"
+							],
+							"query": [
+								{
+									"key": "idEmpresa",
+									"value": "32"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "selectEmpresaTelefone",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{HOST}}/slim/empresaTelefone?idEmpresa=32",
+							"protocol": "http",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"slim",
+								"empresaTelefone"
+							],
+							"query": [
+								{
+									"key": "idEmpresa",
+									"value": "32"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Contrato",
+			"item": [
+				{
+					"name": "selectContratoPorIdEmpresa",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://{{HOST}}/slim/contratoPorIdEmpresa?idEmpresa=33",
+							"protocol": "http",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"slim",
+								"contratoPorIdEmpresa"
+							],
+							"query": [
+								{
+									"key": "idEmpresa",
+									"value": "33"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "insertContrato",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"idEmpresa\": \"33\",\r\n        \"idTipoContrato\": \"3\",\r\n        \"numeroProcesso\": \"555555\",\r\n        \"numeroOrdemServico\": \"999999\",\r\n        \"dataAssinatura\": \"01/01/2020\",\r\n        \"dataInicioVigencia\": \"01/01/2020\",\r\n        \"dataFimVigencia\": \"01/01/2025\",\r\n        \"valorGlobalInicial\": \"2000000.00\",\r\n        \"valorGlobalAtualizado\": \"3000000.99\",\r\n        \"objetoContratual\": \"Objeto Z\",\r\n        \"diaPagamento\": \"1\",\r\n        \"diaPagamentoCorridos\": \"0\",\r\n        \"prazoAlertaDiasPagamento\": \"10\",\r\n        \"prazoAlertaDiasAteste\": \"10\",\r\n        \"prazoAlertaDiasNotaFiscal\": \"10\",\r\n        \"prazoAlertaMesesFimVigencia\": \"10\",\r\n        \"usuarioAlteracao\": \"c110611\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{HOST}}/slim/contrato",
+							"protocol": "http",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"slim",
+								"contrato"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateContrato",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"idContrato\": \"2\",\r\n        \"numeroProcesso\": \"555555\",\r\n        \"numeroOrdemServico\": \"999999\",\r\n        \"dataAssinatura\": \"01/01/2020\",\r\n        \"dataInicioVigencia\": \"01/01/2020\",\r\n        \"dataFimVigencia\": \"01/01/2025\",\r\n        \"valorGlobalInicial\": \"10.00\",\r\n        \"valorGlobalAtualizado\": \"20.99\",\r\n        \"objetoContratual\": \"Objeto Ação\",\r\n        \"diaPagamento\": \"1\",\r\n        \"diaPagamentoCorridos\": \"0\",\r\n        \"prazoAlertaDiasPagamento\": \"10\",\r\n        \"prazoAlertaDiasAteste\": \"10\",\r\n        \"prazoAlertaDiasNotaFiscal\": \"10\",\r\n        \"prazoAlertaMesesFimVigencia\": \"10\",\r\n        \"usuarioAlteracao\": \"c110611\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{HOST}}/slim/contrato",
+							"protocol": "http",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"slim",
+								"contrato"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteContrato",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idContrato\":\"52\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{HOST}}/slim/contrato",
+							"protocol": "http",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"slim",
+								"contrato"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "selectContratoCompromissoSiplo",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{HOST}}/slim/contratoCompromissoSiplo?idContrato=1",
+							"protocol": "http",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"slim",
+								"contratoCompromissoSiplo"
+							],
+							"query": [
+								{
+									"key": "idContrato",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "selectContratoTipoPenalidade",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{HOST}}/slim/contratoTipoPenalidade?idContrato=1&ativo=1",
+							"protocol": "http",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"slim",
+								"contratoTipoPenalidade"
+							],
+							"query": [
+								{
+									"key": "idContrato",
+									"value": "1"
+								},
+								{
+									"key": "ativo",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "insertContratoTipoPenalidade",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idContrato\": \"1\",\r\n    \"idTipoPenalidade\": \"3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{HOST}}/slim/contratoTipoPenalidade",
+							"protocol": "http",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"slim",
+								"contratoTipoPenalidade"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteContratoTipoPenalidade",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idContrato\": \"1\",\r\n    \"idTipoPenalidade\": \"3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{HOST}}/slim/contratoTipoPenalidade",
+							"protocol": "http",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"slim",
+								"contratoTipoPenalidade"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
 			"name": "TipoContato",
 			"item": [
 				{
@@ -21,12 +560,11 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://SP7688ET040:8088/slim/tipoContato",
+							"raw": "http://{{HOST}}/slim/tipoContato",
 							"protocol": "http",
 							"host": [
-								"SP7688ET040"
+								"{{HOST}}"
 							],
-							"port": "8088",
 							"path": [
 								"slim",
 								"tipoContato"
@@ -50,12 +588,11 @@
 							}
 						},
 						"url": {
-							"raw": "http://SP7688ET040:8088/slim/tipoContato",
+							"raw": "http://{{HOST}}/slim/tipoContato",
 							"protocol": "http",
 							"host": [
-								"SP7688ET040"
+								"{{HOST}}"
 							],
-							"port": "8088",
 							"path": [
 								"slim",
 								"tipoContato"
@@ -79,12 +616,11 @@
 							}
 						},
 						"url": {
-							"raw": "http://SP7688ET040:8088/slim/tipoContato",
+							"raw": "http://{{HOST}}/slim/tipoContato",
 							"protocol": "http",
 							"host": [
-								"SP7688ET040"
+								"{{HOST}}"
 							],
-							"port": "8088",
 							"path": [
 								"slim",
 								"tipoContato"
@@ -108,12 +644,11 @@
 							}
 						},
 						"url": {
-							"raw": "http://SP7688ET040:8088/slim/tipoContato",
+							"raw": "http://{{HOST}}/slim/tipoContato",
 							"protocol": "http",
 							"host": [
-								"SP7688ET040"
+								"{{HOST}}"
 							],
-							"port": "8088",
 							"path": [
 								"slim",
 								"tipoContato"
@@ -143,12 +678,11 @@
 							}
 						},
 						"url": {
-							"raw": "http://SP7688ET040:8088/slim/login",
+							"raw": "http://{{HOST}}/slim/login",
 							"protocol": "http",
 							"host": [
-								"SP7688ET040"
+								"{{HOST}}"
 							],
-							"port": "8088",
 							"path": [
 								"slim",
 								"login"
@@ -179,12 +713,11 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://SP7688ET040:8088/slim/tipoContrato?ativo=1",
+							"raw": "http://{{HOST}}/slim/tipoContrato?ativo=1",
 							"protocol": "http",
 							"host": [
-								"SP7688ET040"
+								"{{HOST}}"
 							],
-							"port": "8088",
 							"path": [
 								"slim",
 								"tipoContrato"
@@ -214,12 +747,11 @@
 							}
 						},
 						"url": {
-							"raw": "http://SP7688ET040:8088/slim/tipoContrato",
+							"raw": "http://{{HOST}}/slim/tipoContrato",
 							"protocol": "http",
 							"host": [
-								"SP7688ET040"
+								"{{HOST}}"
 							],
-							"port": "8088",
 							"path": [
 								"slim",
 								"tipoContrato"
@@ -243,12 +775,11 @@
 							}
 						},
 						"url": {
-							"raw": "http://SP7688ET040:8088/slim/tipoContrato",
+							"raw": "http://{{HOST}}/slim/tipoContrato",
 							"protocol": "http",
 							"host": [
-								"SP7688ET040"
+								"{{HOST}}"
 							],
-							"port": "8088",
 							"path": [
 								"slim",
 								"tipoContrato"
@@ -272,12 +803,11 @@
 							}
 						},
 						"url": {
-							"raw": "http://SP7688ET040:8088/slim/tipoContrato",
+							"raw": "http://{{HOST}}/slim/tipoContrato",
 							"protocol": "http",
 							"host": [
-								"SP7688ET040"
+								"{{HOST}}"
 							],
-							"port": "8088",
 							"path": [
 								"slim",
 								"tipoContrato"
@@ -307,12 +837,11 @@
 							}
 						},
 						"url": {
-							"raw": "http://SP7688ET040:8088/slim/telefone",
+							"raw": "http://{{HOST}}/slim/telefone",
 							"protocol": "http",
 							"host": [
-								"SP7688ET040"
+								"{{HOST}}"
 							],
-							"port": "8088",
 							"path": [
 								"slim",
 								"telefone"
@@ -336,12 +865,11 @@
 							}
 						},
 						"url": {
-							"raw": "http://SP7688ET040:8088/slim/telefone",
+							"raw": "http://{{HOST}}/slim/telefone",
 							"protocol": "http",
 							"host": [
-								"SP7688ET040"
+								"{{HOST}}"
 							],
-							"port": "8088",
 							"path": [
 								"slim",
 								"telefone"
@@ -365,12 +893,11 @@
 							}
 						},
 						"url": {
-							"raw": "http://SP7688ET040:8088/slim/telefone",
+							"raw": "http://{{HOST}}/slim/telefone",
 							"protocol": "http",
 							"host": [
-								"SP7688ET040"
+								"{{HOST}}"
 							],
-							"port": "8088",
 							"path": [
 								"slim",
 								"telefone"
@@ -400,12 +927,11 @@
 							}
 						},
 						"url": {
-							"raw": "http://SP7688ET040:8088/slim/email",
+							"raw": "http://{{HOST}}/slim/email",
 							"protocol": "http",
 							"host": [
-								"SP7688ET040"
+								"{{HOST}}"
 							],
-							"port": "8088",
 							"path": [
 								"slim",
 								"email"
@@ -429,12 +955,11 @@
 							}
 						},
 						"url": {
-							"raw": "http://SP7688ET040:8088/slim/email",
+							"raw": "http://{{HOST}}/slim/email",
 							"protocol": "http",
 							"host": [
-								"SP7688ET040"
+								"{{HOST}}"
 							],
-							"port": "8088",
 							"path": [
 								"slim",
 								"email"
@@ -458,12 +983,11 @@
 							}
 						},
 						"url": {
-							"raw": "http://SP7688ET040:8088/slim/email",
+							"raw": "http://{{HOST}}/slim/email",
 							"protocol": "http",
 							"host": [
-								"SP7688ET040"
+								"{{HOST}}"
 							],
-							"port": "8088",
 							"path": [
 								"slim",
 								"email"
@@ -514,12 +1038,11 @@
 							}
 						},
 						"url": {
-							"raw": "http://SP7688ET040:8088/slim/documento",
+							"raw": "http://{{HOST}}/slim/documento",
 							"protocol": "http",
 							"host": [
-								"SP7688ET040"
+								"{{HOST}}"
 							],
-							"port": "8088",
 							"path": [
 								"slim",
 								"documento"
@@ -543,12 +1066,11 @@
 							}
 						},
 						"url": {
-							"raw": "http://SP7688ET040:8088/slim/documento",
+							"raw": "http://{{HOST}}/slim/documento",
 							"protocol": "http",
 							"host": [
-								"SP7688ET040"
+								"{{HOST}}"
 							],
-							"port": "8088",
 							"path": [
 								"slim",
 								"documento"
@@ -572,566 +1094,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://SP7688ET040:8088/slim/documento",
+							"raw": "http://{{HOST}}/slim/documento",
 							"protocol": "http",
 							"host": [
-								"SP7688ET040"
+								"{{HOST}}"
 							],
-							"port": "8088",
 							"path": [
 								"slim",
 								"documento"
-							]
-						}
-					},
-					"response": []
-				}
-			],
-			"protocolProfileBehavior": {}
-		},
-		{
-			"name": "Empresa",
-			"item": [
-				{
-					"name": "selectEmpresa",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "http://SP7688ET040:8088/slim/empresa",
-							"protocol": "http",
-							"host": [
-								"SP7688ET040"
-							],
-							"port": "8088",
-							"path": [
-								"slim",
-								"empresa"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "selectEmpresaPorId",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "http://SP7688ET040:8088/slim/empresaPorId?idEmpresa=32",
-							"protocol": "http",
-							"host": [
-								"SP7688ET040"
-							],
-							"port": "8088",
-							"path": [
-								"slim",
-								"empresaPorId"
-							],
-							"query": [
-								{
-									"key": "idEmpresa",
-									"value": "32"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "insertEmpresa",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"empresa\": \"Empresa ÉÊÈÊË\",\r\n    \"cnpj\": \"78792772000109\",\r\n    \"endereco\": \"ÉÊÈÊË\",\r\n    \"cidade\": \"ÉÊÈÊË\",\r\n    \"uf\": \"DF\",\r\n    \"cep\": \"12345678\",\r\n    \"observacao\": \"ÉÊÈÊË\",\r\n    \"ativo\": \"1\",\r\n    \"usuarioAlteracao\":\"c110611\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://SP7688ET040:8088/slim/empresa",
-							"protocol": "http",
-							"host": [
-								"SP7688ET040"
-							],
-							"port": "8088",
-							"path": [
-								"slim",
-								"empresa"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "updateEmpresa",
-					"request": {
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"idEmpresa\": \"33\",\r\n    \"empresa\": \"Empresa ÉÊÈÊËÍÌÎÏ\",\r\n    \"cnpj\": \"78792772000109\",\r\n    \"endereco\": \"ÉÊÈÊËÍÌÎÏ\",\r\n    \"cidade\": \"ÉÊÈÊËÍÌÎÏ\",\r\n    \"uf\": \"DF\",\r\n    \"cep\": \"12345678\",\r\n    \"observacao\": \"ÉÊÈÊËÍÌÎÏ\",\r\n    \"ativo\": \"1\",\r\n    \"usuarioAlteracao\":\"c110611\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://SP7688ET040:8088/slim/empresa",
-							"protocol": "http",
-							"host": [
-								"SP7688ET040"
-							],
-							"port": "8088",
-							"path": [
-								"slim",
-								"empresa"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "deleteEmpresa",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"idEmpresa\": \"33\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://SP7688ET040:8088/slim/empresa",
-							"protocol": "http",
-							"host": [
-								"SP7688ET040"
-							],
-							"port": "8088",
-							"path": [
-								"slim",
-								"empresa"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "selectEmpresaDocumento",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://SP7688ET040:8088/slim/empresaDocumento?idEmpresa=32",
-							"protocol": "http",
-							"host": [
-								"SP7688ET040"
-							],
-							"port": "8088",
-							"path": [
-								"slim",
-								"empresaDocumento"
-							],
-							"query": [
-								{
-									"key": "idEmpresa",
-									"value": "32"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "selectEmpresaEmail",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://SP7688ET040:8088/slim/empresaEmail?idEmpresa=32",
-							"protocol": "http",
-							"host": [
-								"SP7688ET040"
-							],
-							"port": "8088",
-							"path": [
-								"slim",
-								"empresaEmail"
-							],
-							"query": [
-								{
-									"key": "idEmpresa",
-									"value": "32"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "selectEmpresaTelefone",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://SP7688ET040:8088/slim/empresaTelefone?idEmpresa=32",
-							"protocol": "http",
-							"host": [
-								"SP7688ET040"
-							],
-							"port": "8088",
-							"path": [
-								"slim",
-								"empresaTelefone"
-							],
-							"query": [
-								{
-									"key": "idEmpresa",
-									"value": "32"
-								}
-							]
-						}
-					},
-					"response": []
-				}
-			],
-			"protocolProfileBehavior": {}
-		},
-		{
-			"name": "Contrato",
-			"item": [
-				{
-					"name": "selectContratoPorIdEmpresa",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "http://SP7688ET040:8088/slim/contratoPorIdEmpresa?idEmpresa=33",
-							"protocol": "http",
-							"host": [
-								"SP7688ET040"
-							],
-							"port": "8088",
-							"path": [
-								"slim",
-								"contratoPorIdEmpresa"
-							],
-							"query": [
-								{
-									"key": "idEmpresa",
-									"value": "33"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "insertContrato",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n        \"idEmpresa\": \"33\",\r\n        \"idTipoContrato\": \"3\",\r\n        \"contrato\": \"Contrato Z\",\r\n        \"numeroProcesso\": \"555555\",\r\n        \"numeroOrdemServico\": \"999999\",\r\n        \"dataAssinatura\": \"01/01/2020\",\r\n        \"dataInicioVigencia\": \"01/01/2020\",\r\n        \"dataFimVigencia\": \"01/01/2025\",\r\n        \"valorGlobalInicial\": \"2000000.00\",\r\n        \"valorGlobalAtualizado\": \"3000000.99\",\r\n        \"objetoContratual\": \"Objeto Z\",\r\n        \"diaPagamento\": \"1\",\r\n        \"diaPagamentoCorridos\": \"0\",\r\n        \"prazoAlertaDiasPagamento\": \"10\",\r\n        \"prazoAlertaDiasAteste\": \"10\",\r\n        \"prazoAlertaDiasNotaFiscal\": \"10\",\r\n        \"prazoAlertaMesesFimVigencia\": \"10\",\r\n        \"usuarioAlteracao\": \"c110611\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://SP7688ET040:8088/slim/contrato",
-							"protocol": "http",
-							"host": [
-								"SP7688ET040"
-							],
-							"port": "8088",
-							"path": [
-								"slim",
-								"contrato"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "updateContrato",
-					"request": {
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n        \"idContrato\": \"2\",\r\n        \"idEmpresa\": \"33\",\r\n        \"idTipoContrato\": \"2\",\r\n        \"contrato\": \"Contrato Ação\",\r\n        \"numeroProcesso\": \"555555\",\r\n        \"numeroOrdemServico\": \"999999\",\r\n        \"dataAssinatura\": \"01/01/2020\",\r\n        \"dataInicioVigencia\": \"01/01/2020\",\r\n        \"dataFimVigencia\": \"01/01/2025\",\r\n        \"valorGlobalInicial\": \"10.00\",\r\n        \"valorGlobalAtualizado\": \"20.99\",\r\n        \"objetoContratual\": \"Objeto Ação\",\r\n        \"diaPagamento\": \"1\",\r\n        \"diaPagamentoCorridos\": \"0\",\r\n        \"prazoAlertaDiasPagamento\": \"10\",\r\n        \"prazoAlertaDiasAteste\": \"10\",\r\n        \"prazoAlertaDiasNotaFiscal\": \"10\",\r\n        \"prazoAlertaMesesFimVigencia\": \"10\",\r\n        \"usuarioAlteracao\": \"c110611\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://SP7688ET040:8088/slim/contrato",
-							"protocol": "http",
-							"host": [
-								"SP7688ET040"
-							],
-							"port": "8088",
-							"path": [
-								"slim",
-								"contrato"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "deleteContrato",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"idContrato\":\"52\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://SP7688ET040:8088/slim/contrato",
-							"protocol": "http",
-							"host": [
-								"SP7688ET040"
-							],
-							"port": "8088",
-							"path": [
-								"slim",
-								"contrato"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "selectContratoCompromissoSiplo",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://SP7688ET040:8088/slim/contratoCompromissoSiplo?idContrato=1",
-							"protocol": "http",
-							"host": [
-								"SP7688ET040"
-							],
-							"port": "8088",
-							"path": [
-								"slim",
-								"contratoCompromissoSiplo"
-							],
-							"query": [
-								{
-									"key": "idContrato",
-									"value": "1"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "selectContratoTipoPenalidade",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://SP7688ET040:8088/slim/contratoTipoPenalidade?idContrato=1",
-							"protocol": "http",
-							"host": [
-								"SP7688ET040"
-							],
-							"port": "8088",
-							"path": [
-								"slim",
-								"contratoTipoPenalidade"
-							],
-							"query": [
-								{
-									"key": "idContrato",
-									"value": "1"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "insertContratoTipoPenalidade",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"idContrato\": \"1\",\r\n    \"idTipoPenalidade\": \"3\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://SP7688ET040:8088/slim/contratoTipoPenalidade",
-							"protocol": "http",
-							"host": [
-								"SP7688ET040"
-							],
-							"port": "8088",
-							"path": [
-								"slim",
-								"contratoTipoPenalidade"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "deleteContratoTipoPenalidade",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"idContrato\": \"1\",\r\n    \"idTipoPenalidade\": \"3\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://SP7688ET040:8088/slim/contratoTipoPenalidade",
-							"protocol": "http",
-							"host": [
-								"SP7688ET040"
-							],
-							"port": "8088",
-							"path": [
-								"slim",
-								"contratoTipoPenalidade"
 							]
 						}
 					},
@@ -1161,12 +1131,11 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://SP7688ET040:8088/slim/uf",
+							"raw": "http://{{HOST}}/slim/uf",
 							"protocol": "http",
 							"host": [
-								"SP7688ET040"
+								"{{HOST}}"
 							],
-							"port": "8088",
 							"path": [
 								"slim",
 								"uf"
@@ -1218,12 +1187,11 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://SP7688ET040:8088/slim/dominioDocumento",
+							"raw": "http://{{HOST}}/slim/dominioDocumento",
 							"protocol": "http",
 							"host": [
-								"SP7688ET040"
+								"{{HOST}}"
 							],
-							"port": "8088",
 							"path": [
 								"slim",
 								"dominioDocumento"
@@ -1247,12 +1215,11 @@
 							}
 						},
 						"url": {
-							"raw": "http://SP7688ET040:8088/slim/dominioDocumento",
+							"raw": "http://{{HOST}}/slim/dominioDocumento",
 							"protocol": "http",
 							"host": [
-								"SP7688ET040"
+								"{{HOST}}"
 							],
-							"port": "8088",
 							"path": [
 								"slim",
 								"dominioDocumento"
@@ -1276,12 +1243,11 @@
 							}
 						},
 						"url": {
-							"raw": "http://SP7688ET040:8088/slim/dominioDocumento",
+							"raw": "http://{{HOST}}/slim/dominioDocumento",
 							"protocol": "http",
 							"host": [
-								"SP7688ET040"
+								"{{HOST}}"
 							],
-							"port": "8088",
 							"path": [
 								"slim",
 								"dominioDocumento"
@@ -1305,12 +1271,11 @@
 							}
 						},
 						"url": {
-							"raw": "http://SP7688ET040:8088/slim/dominioDocumento",
+							"raw": "http://{{HOST}}/slim/dominioDocumento",
 							"protocol": "http",
 							"host": [
-								"SP7688ET040"
+								"{{HOST}}"
 							],
-							"port": "8088",
 							"path": [
 								"slim",
 								"dominioDocumento"
@@ -1341,12 +1306,11 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://SP7688ET040:8088/slim/tipoPenalidade?ativo=1",
+							"raw": "http://{{HOST}}/slim/tipoPenalidade?ativo=1",
 							"protocol": "http",
 							"host": [
-								"SP7688ET040"
+								"{{HOST}}"
 							],
-							"port": "8088",
 							"path": [
 								"slim",
 								"tipoPenalidade"
@@ -1376,12 +1340,11 @@
 							}
 						},
 						"url": {
-							"raw": "http://SP7688ET040:8088/slim/tipoPenalidade",
+							"raw": "http://{{HOST}}/slim/tipoPenalidade",
 							"protocol": "http",
 							"host": [
-								"SP7688ET040"
+								"{{HOST}}"
 							],
-							"port": "8088",
 							"path": [
 								"slim",
 								"tipoPenalidade"
@@ -1405,12 +1368,11 @@
 							}
 						},
 						"url": {
-							"raw": "http://SP7688ET040:8088/slim/tipoPenalidade",
+							"raw": "http://{{HOST}}/slim/tipoPenalidade",
 							"protocol": "http",
 							"host": [
-								"SP7688ET040"
+								"{{HOST}}"
 							],
-							"port": "8088",
 							"path": [
 								"slim",
 								"tipoPenalidade"
@@ -1434,12 +1396,11 @@
 							}
 						},
 						"url": {
-							"raw": "http://SP7688ET040:8088/slim/tipoPenalidade",
+							"raw": "http://{{HOST}}/slim/tipoPenalidade",
 							"protocol": "http",
 							"host": [
-								"SP7688ET040"
+								"{{HOST}}"
 							],
-							"port": "8088",
 							"path": [
 								"slim",
 								"tipoPenalidade"
@@ -1469,12 +1430,11 @@
 							}
 						},
 						"url": {
-							"raw": "http://SP7688ET040:8088/slim/compromissoSiplo",
+							"raw": "http://{{HOST}}/slim/compromissoSiplo",
 							"protocol": "http",
 							"host": [
-								"SP7688ET040"
+								"{{HOST}}"
 							],
-							"port": "8088",
 							"path": [
 								"slim",
 								"compromissoSiplo"
@@ -1498,12 +1458,11 @@
 							}
 						},
 						"url": {
-							"raw": "http://SP7688ET040:8088/slim/compromissoSiplo",
+							"raw": "http://{{HOST}}/slim/compromissoSiplo",
 							"protocol": "http",
 							"host": [
-								"SP7688ET040"
+								"{{HOST}}"
 							],
-							"port": "8088",
 							"path": [
 								"slim",
 								"compromissoSiplo"
@@ -1527,12 +1486,11 @@
 							}
 						},
 						"url": {
-							"raw": "http://SP7688ET040:8088/slim/compromissoSiplo",
+							"raw": "http://{{HOST}}/slim/compromissoSiplo",
 							"protocol": "http",
 							"host": [
-								"SP7688ET040"
+								"{{HOST}}"
 							],
-							"port": "8088",
 							"path": [
 								"slim",
 								"compromissoSiplo"

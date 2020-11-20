@@ -18,9 +18,12 @@ class ContratoDAO extends Conexao {
         return $result;
     }
 
-    public function selectContratoTipoPenalidade($idContrato) {
-        $stmt = $this->pdo->prepare("SELECT * FROM [contratos].[fn_tipo_penalidade_selecionar_por_id_contrato](:id_contrato)");
+    public function selectContratoTipoPenalidade($model) {
+        $stmt = $this->pdo->prepare("SELECT * FROM [contratos].[fn_tipo_penalidade_selecionar_por_id_contrato](:id_contrato, :ativo)");
+        $idContrato = $model->getIdContrato();
+        $ativo = $model->getAtivo();
         $stmt->bindParam('id_contrato', $idContrato);
+        $stmt->bindParam('ativo', $ativo);
         $stmt->execute();
         $result = $stmt->fetchAll(\PDO::FETCH_ASSOC);
         return $result;
@@ -39,7 +42,6 @@ class ContratoDAO extends Conexao {
             $stmt = $this->pdo->prepare("EXEC [contratos].[contrato_inserir] 
             							@id_empresa = '{$model->getIdEmpresa()}',
                                         @id_tipo_contrato = '{$model->getIdTipoContrato()}',
-                                        @contrato = '{$model->getContrato()}',
                                         @numero_processo = '{$model->getNumeroProcesso()}',
                                         @numero_ordem_servico = '{$model->getNumeroOrdemServico()}',
                                         @data_assinatura = '{$model->getDataAssinatura()}',
@@ -91,9 +93,6 @@ class ContratoDAO extends Conexao {
         try {
         $stmt = $this->pdo->prepare("EXEC [contratos].[contrato_alterar] 
                                         @id_contrato = '{$model->getIdContrato()}', 
-                                        @id_empresa = '{$model->getIdEmpresa()}',
-                                        @id_tipo_contrato = '{$model->getIdTipoContrato()}',
-                                        @contrato = '{$model->getContrato()}',
                                         @numero_processo = '{$model->getNumeroProcesso()}',
                                         @numero_ordem_servico = '{$model->getNumeroOrdemServico()}',
                                         @data_assinatura = '{$model->getDataAssinatura()}',

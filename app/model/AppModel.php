@@ -7,7 +7,8 @@ abstract class AppModel {
     protected $ultimaAlteracao;
     protected $mensagem;
     protected $status;
-    
+    protected $ativo;
+
     public function __construct() {
 
     }
@@ -88,6 +89,26 @@ abstract class AppModel {
     public function setStatus($status)
     {
         $this->status = $status;
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAtivo()
+    {
+        return $this->ativo;
+    }
+
+    /**
+     * @param mixed $status
+     *
+     * @return self
+     */
+    public function setAtivo($ativo)
+    {
+        $this->ativo = $ativo;
 
         return $this;
     }
