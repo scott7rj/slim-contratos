@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "0d60d9c7-f972-482e-8a82-d206ab949222",
+		"_postman_id": "9d81139f-bd17-4d98-8c45-35ed77cb9013",
 		"name": "Contratos",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -24,13 +24,13 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://{{HOST}}/slim/empresa",
+							"raw": "http://{{HOST}}/{{APP}}/empresa",
 							"protocol": "http",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
-								"slim",
+								"{{APP}}",
 								"empresa"
 							]
 						}
@@ -53,13 +53,13 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://{{HOST}}/slim/empresaPorId?idEmpresa=32",
+							"raw": "http://{{HOST}}/{{APP}}/empresaPorId?idEmpresa=32",
 							"protocol": "http",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
-								"slim",
+								"{{APP}}",
 								"empresaPorId"
 							],
 							"query": [
@@ -87,13 +87,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://{{HOST}}/slim/empresa",
+							"raw": "http://{{HOST}}/{{APP}}/empresa",
 							"protocol": "http",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
-								"slim",
+								"{{APP}}",
 								"empresa"
 							]
 						}
@@ -115,13 +115,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://{{HOST}}/slim/empresa",
+							"raw": "http://{{HOST}}/{{APP}}/empresa",
 							"protocol": "http",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
-								"slim",
+								"{{APP}}",
 								"empresa"
 							]
 						}
@@ -143,13 +143,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://{{HOST}}/slim/empresa",
+							"raw": "http://{{HOST}}/{{APP}}/empresa",
 							"protocol": "http",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
-								"slim",
+								"{{APP}}",
 								"empresa"
 							]
 						}
@@ -177,13 +177,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://{{HOST}}/slim/empresaDocumento?idEmpresa=32",
+							"raw": "http://{{HOST}}/{{APP}}/empresaDocumento?idEmpresa=32",
 							"protocol": "http",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
-								"slim",
+								"{{APP}}",
 								"empresaDocumento"
 							],
 							"query": [
@@ -217,13 +217,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://{{HOST}}/slim/empresaEmail?idEmpresa=32",
+							"raw": "http://{{HOST}}/{{APP}}/empresaEmail?idEmpresa=32",
 							"protocol": "http",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
-								"slim",
+								"{{APP}}",
 								"empresaEmail"
 							],
 							"query": [
@@ -257,13 +257,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://{{HOST}}/slim/empresaTelefone?idEmpresa=32",
+							"raw": "http://{{HOST}}/{{APP}}/empresaTelefone?idEmpresa=32",
 							"protocol": "http",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
-								"slim",
+								"{{APP}}",
 								"empresaTelefone"
 							],
 							"query": [
@@ -298,13 +298,13 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://{{HOST}}/slim/contratoPorIdEmpresa?idEmpresa=33",
+							"raw": "http://{{HOST}}/{{APP}}/contratoPorIdEmpresa?idEmpresa=33",
 							"protocol": "http",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
-								"slim",
+								"{{APP}}",
 								"contratoPorIdEmpresa"
 							],
 							"query": [
@@ -332,13 +332,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://{{HOST}}/slim/contrato",
+							"raw": "http://{{HOST}}/{{APP}}/contrato",
 							"protocol": "http",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
-								"slim",
+								"{{APP}}",
 								"contrato"
 							]
 						}
@@ -360,13 +360,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://{{HOST}}/slim/contrato",
+							"raw": "http://{{HOST}}/{{APP}}/contrato",
 							"protocol": "http",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
-								"slim",
+								"{{APP}}",
 								"contrato"
 							]
 						}
@@ -388,13 +388,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://{{HOST}}/slim/contrato",
+							"raw": "http://{{HOST}}/{{APP}}/contrato",
 							"protocol": "http",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
-								"slim",
+								"{{APP}}",
 								"contrato"
 							]
 						}
@@ -422,13 +422,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://{{HOST}}/slim/contratoCompromissoSiplo?idContrato=1",
+							"raw": "http://{{HOST}}/{{APP}}/contratoCompromissoSiplo?idContrato=1",
 							"protocol": "http",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
-								"slim",
+								"{{APP}}",
 								"contratoCompromissoSiplo"
 							],
 							"query": [
@@ -462,13 +462,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://{{HOST}}/slim/contratoTipoPenalidade?idContrato=1&ativo=1",
+							"raw": "http://{{HOST}}/{{APP}}/contratoTipoPenalidade?idContrato=1&ativo=1",
 							"protocol": "http",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
-								"slim",
+								"{{APP}}",
 								"contratoTipoPenalidade"
 							],
 							"query": [
@@ -500,13 +500,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://{{HOST}}/slim/contratoTipoPenalidade",
+							"raw": "http://{{HOST}}/{{APP}}/contratoTipoPenalidade",
 							"protocol": "http",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
-								"slim",
+								"{{APP}}",
 								"contratoTipoPenalidade"
 							]
 						}
@@ -528,13 +528,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://{{HOST}}/slim/contratoTipoPenalidade",
+							"raw": "http://{{HOST}}/{{APP}}/contratoTipoPenalidade",
 							"protocol": "http",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
-								"slim",
+								"{{APP}}",
 								"contratoTipoPenalidade"
 							]
 						}
@@ -560,13 +560,13 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://{{HOST}}/slim/tipoContato",
+							"raw": "http://{{HOST}}/{{APP}}/tipoContato",
 							"protocol": "http",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
-								"slim",
+								"{{APP}}",
 								"tipoContato"
 							]
 						}
@@ -588,13 +588,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://{{HOST}}/slim/tipoContato",
+							"raw": "http://{{HOST}}/{{APP}}/tipoContato",
 							"protocol": "http",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
-								"slim",
+								"{{APP}}",
 								"tipoContato"
 							]
 						}
@@ -616,13 +616,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://{{HOST}}/slim/tipoContato",
+							"raw": "http://{{HOST}}/{{APP}}/tipoContato",
 							"protocol": "http",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
-								"slim",
+								"{{APP}}",
 								"tipoContato"
 							]
 						}
@@ -644,13 +644,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://{{HOST}}/slim/tipoContato",
+							"raw": "http://{{HOST}}/{{APP}}/tipoContato",
 							"protocol": "http",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
-								"slim",
+								"{{APP}}",
 								"tipoContato"
 							]
 						}
@@ -678,13 +678,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://{{HOST}}/slim/login",
+							"raw": "http://{{HOST}}/{{APP}}/login",
 							"protocol": "http",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
-								"slim",
+								"{{APP}}",
 								"login"
 							]
 						}
@@ -713,13 +713,13 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://{{HOST}}/slim/tipoContrato?ativo=1",
+							"raw": "http://{{HOST}}/{{APP}}/tipoContrato?ativo=1",
 							"protocol": "http",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
-								"slim",
+								"{{APP}}",
 								"tipoContrato"
 							],
 							"query": [
@@ -747,13 +747,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://{{HOST}}/slim/tipoContrato",
+							"raw": "http://{{HOST}}/{{APP}}/tipoContrato",
 							"protocol": "http",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
-								"slim",
+								"{{APP}}",
 								"tipoContrato"
 							]
 						}
@@ -775,13 +775,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://{{HOST}}/slim/tipoContrato",
+							"raw": "http://{{HOST}}/{{APP}}/tipoContrato",
 							"protocol": "http",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
-								"slim",
+								"{{APP}}",
 								"tipoContrato"
 							]
 						}
@@ -803,13 +803,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://{{HOST}}/slim/tipoContrato",
+							"raw": "http://{{HOST}}/{{APP}}/tipoContrato",
 							"protocol": "http",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
-								"slim",
+								"{{APP}}",
 								"tipoContrato"
 							]
 						}
@@ -837,13 +837,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://{{HOST}}/slim/telefone",
+							"raw": "http://{{HOST}}/{{APP}}/telefone",
 							"protocol": "http",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
-								"slim",
+								"{{APP}}",
 								"telefone"
 							]
 						}
@@ -865,13 +865,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://{{HOST}}/slim/telefone",
+							"raw": "http://{{HOST}}/{{APP}}/telefone",
 							"protocol": "http",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
-								"slim",
+								"{{APP}}",
 								"telefone"
 							]
 						}
@@ -893,13 +893,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://{{HOST}}/slim/telefone",
+							"raw": "http://{{HOST}}/{{APP}}/telefone",
 							"protocol": "http",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
-								"slim",
+								"{{APP}}",
 								"telefone"
 							]
 						}
@@ -927,13 +927,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://{{HOST}}/slim/email",
+							"raw": "http://{{HOST}}/{{APP}}/email",
 							"protocol": "http",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
-								"slim",
+								"{{APP}}",
 								"email"
 							]
 						}
@@ -955,13 +955,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://{{HOST}}/slim/email",
+							"raw": "http://{{HOST}}/{{APP}}/email",
 							"protocol": "http",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
-								"slim",
+								"{{APP}}",
 								"email"
 							]
 						}
@@ -983,13 +983,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://{{HOST}}/slim/email",
+							"raw": "http://{{HOST}}/{{APP}}/email",
 							"protocol": "http",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
-								"slim",
+								"{{APP}}",
 								"email"
 							]
 						}
@@ -1038,13 +1038,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://{{HOST}}/slim/documento",
+							"raw": "http://{{HOST}}/{{APP}}/documento",
 							"protocol": "http",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
-								"slim",
+								"{{APP}}",
 								"documento"
 							]
 						}
@@ -1066,13 +1066,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://{{HOST}}/slim/documento",
+							"raw": "http://{{HOST}}/{{APP}}/documento",
 							"protocol": "http",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
-								"slim",
+								"{{APP}}",
 								"documento"
 							]
 						}
@@ -1094,13 +1094,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://{{HOST}}/slim/documento",
+							"raw": "http://{{HOST}}/{{APP}}/documento",
 							"protocol": "http",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
-								"slim",
+								"{{APP}}",
 								"documento"
 							]
 						}
@@ -1131,13 +1131,13 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://{{HOST}}/slim/uf",
+							"raw": "http://{{HOST}}/{{APP}}/uf",
 							"protocol": "http",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
-								"slim",
+								"{{APP}}",
 								"uf"
 							]
 						}
@@ -1187,13 +1187,13 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://{{HOST}}/slim/dominioDocumento",
+							"raw": "http://{{HOST}}/{{APP}}/dominioDocumento",
 							"protocol": "http",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
-								"slim",
+								"{{APP}}",
 								"dominioDocumento"
 							]
 						}
@@ -1215,13 +1215,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://{{HOST}}/slim/dominioDocumento",
+							"raw": "http://{{HOST}}/{{APP}}/dominioDocumento",
 							"protocol": "http",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
-								"slim",
+								"{{APP}}",
 								"dominioDocumento"
 							]
 						}
@@ -1243,13 +1243,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://{{HOST}}/slim/dominioDocumento",
+							"raw": "http://{{HOST}}/{{APP}}/dominioDocumento",
 							"protocol": "http",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
-								"slim",
+								"{{APP}}",
 								"dominioDocumento"
 							]
 						}
@@ -1271,13 +1271,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://{{HOST}}/slim/dominioDocumento",
+							"raw": "http://{{HOST}}/{{APP}}/dominioDocumento",
 							"protocol": "http",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
-								"slim",
+								"{{APP}}",
 								"dominioDocumento"
 							]
 						}
@@ -1306,13 +1306,13 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://{{HOST}}/slim/tipoPenalidade?ativo=1",
+							"raw": "http://{{HOST}}/{{APP}}/tipoPenalidade?ativo=1",
 							"protocol": "http",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
-								"slim",
+								"{{APP}}",
 								"tipoPenalidade"
 							],
 							"query": [
@@ -1340,13 +1340,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://{{HOST}}/slim/tipoPenalidade",
+							"raw": "http://{{HOST}}/{{APP}}/tipoPenalidade",
 							"protocol": "http",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
-								"slim",
+								"{{APP}}",
 								"tipoPenalidade"
 							]
 						}
@@ -1368,13 +1368,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://{{HOST}}/slim/tipoPenalidade",
+							"raw": "http://{{HOST}}/{{APP}}/tipoPenalidade",
 							"protocol": "http",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
-								"slim",
+								"{{APP}}",
 								"tipoPenalidade"
 							]
 						}
@@ -1396,13 +1396,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://{{HOST}}/slim/tipoPenalidade",
+							"raw": "http://{{HOST}}/{{APP}}/tipoPenalidade",
 							"protocol": "http",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
-								"slim",
+								"{{APP}}",
 								"tipoPenalidade"
 							]
 						}
@@ -1430,13 +1430,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://{{HOST}}/slim/compromissoSiplo",
+							"raw": "http://{{HOST}}/{{APP}}/compromissoSiplo",
 							"protocol": "http",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
-								"slim",
+								"{{APP}}",
 								"compromissoSiplo"
 							]
 						}
@@ -1458,13 +1458,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://{{HOST}}/slim/compromissoSiplo",
+							"raw": "http://{{HOST}}/{{APP}}/compromissoSiplo",
 							"protocol": "http",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
-								"slim",
+								"{{APP}}",
 								"compromissoSiplo"
 							]
 						}
@@ -1486,13 +1486,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://{{HOST}}/slim/compromissoSiplo",
+							"raw": "http://{{HOST}}/{{APP}}/compromissoSiplo",
 							"protocol": "http",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
-								"slim",
+								"{{APP}}",
 								"compromissoSiplo"
 							]
 						}
